@@ -1,0 +1,23 @@
+{
+  "name": "comicsearch",
+  "version": "1.0.0",
+  "description": "The purpose of this website is to help introduce new readers to comics and to be an easy way to find series of different characters",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rwprice31/ComicSearch.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rwprice31/ComicSearch/issues"
+  },
+  "homepage": "https://github.com/rwprice31/ComicSearch#readme"
+}
