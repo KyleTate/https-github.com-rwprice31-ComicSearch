@@ -1,19 +1,12 @@
-require('dotenv').config()
-
-const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
-// const pool = require('./database');
-
-const mysql = require('mysql');
-
-  let connection = mysql.createConnection({
-      host: process.env.DB_HOST,
-      user: process.env.DB_USER,
-      database: process.env.DB_DATABASE,
-      password: process.env.DB_PASS
-});
-
+// const mysql = require('mysql');
+//
+//  //   let connection = mysql.createConnection({
+//  //       host: process.env.DB_HOST,
+//  //       user: process.env.DB_USER,
+//  //       database: process.env.DB_DATABASE,
+//  //       password: process.env.DB_PASS
+//  // });
+//
 // // [START cloud_sql_mysql_mysql_create]
 // let pool;
 // const createPool = async () => {
@@ -60,36 +53,14 @@ const mysql = require('mysql');
 //     });
 // };
 // createPool();
-// [END cloud_sql_mysql_mysql_create]
-
-connection.connect(function(err) {
-    if (err) {
-        console.error('Error connecting: ' + err.stack);
-        return;
-    }
-    console.log('Connected as thread id: ' + connection.threadId);
-});
-
+// // [END cloud_sql_mysql_mysql_create]
+//
+// // connection.connect(function(err) {
+// //     if (err) {
+// //         console.error('Error connecting: ' + err.stack);
+// //         return;
+// //     }
+// //     console.log('Connected as thread id: ' + connection.threadId);
+// // });
+//
 // module.exports = createPool();
-
-// app.get('/test', async (req, res) => {
-//         await pool.query(
-//             "SELECT * FROM `gcd_series` LIMIT 3");
-//     });
-
-app.route('/test')
-    .get(function(req, res, next) {
-        connection.query(
-            "SELECT * FROM `gcd_series` LIMIT 3",
-            function(error, results, fields) {
-                if (error) throw error;
-                res.json(results);
-            }
-        );
-    });
-
-app.get('/status', (req, res) => res.send('Working!'));
-
-// Port 8080 for Google App Engine
-app.set('port', process.env.PORT || 3000);
-app.listen(3000);
