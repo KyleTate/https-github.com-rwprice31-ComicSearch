@@ -3,7 +3,7 @@ import Publishers from "./components/publishers";
 import './App.css';
 // import {BrowserRouter} from  'react-router-dom';
 import Route from 'react-router-dom/Route';
-import NonLandingPages from './Heros';
+import Heros from './components/Heros';
 import DCLogo from "./components/DCLogo.png";
 
 class App extends Component {
@@ -29,6 +29,7 @@ class App extends Component {
 
 
                 <Publishers />
+                {/*<Heros />*/}
                 {/*<div>*/}
                 {/*    <Publishers publisher={this.state.publishers}/>*/}
                 {/*</div>*/}
