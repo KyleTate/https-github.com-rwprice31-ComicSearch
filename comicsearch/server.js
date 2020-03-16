@@ -83,7 +83,7 @@ app.route('/test')
             "SELECT * FROM `gcd_series` LIMIT 3",
             function(error, results, fields) {
                 if (error) throw error;
-                res.json(results);
+                res.json(results); 
             }
         );
     });
