@@ -36,6 +36,25 @@
   animation: ripple 1000ms ease-out forwards;
 }
 
+.Hero-Images {
+  height: 400px;
+  width: 250px;
+
+}
+#Search-Submit {
+  position: absolute;
+  top: 225px;
+  left: 830px;
+}
+
+
+#Search-Bar {
+  position: absolute;
+  top: 225px;
+  left: 655px;
+
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -85,3 +104,6 @@
 }
 /*home page*/
 
+#Quick-Fix {
+  opacity: 0%;
+}

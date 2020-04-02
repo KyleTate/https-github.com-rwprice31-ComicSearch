@@ -4,7 +4,15 @@ import './App.css';
 // import {BrowserRouter} from  'react-router-dom';
 import Route from 'react-router-dom/Route';
 import Heros from './components/Heros';
+import SimpleSlider from "./components/SimpleSlider";
 import DCLogo from "./components/DCLogo.png";
+
+import Image1 from "./components/hulk.png";
+import Image2 from "./components/thor.png";
+import Image3 from "./components/CaptianAmerica.png";
+
+
+
 
 class App extends Component {
     state = {
@@ -23,17 +31,22 @@ class App extends Component {
     }
 
 
+
     render() {
         return (
             <div className="App">
 
 
-                <Publishers />
-                {/*<Heros />*/}
+                {/*<Publishers />*/}
+                <Heros />
+                <SimpleSlider />
+
                 {/*<div>*/}
                 {/*    <Publishers publisher={this.state.publishers}/>*/}
                 {/*</div>*/}
             </div>
+
+
 
 
         );
