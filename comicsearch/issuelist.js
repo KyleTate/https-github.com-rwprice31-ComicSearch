@@ -45,12 +45,12 @@ app.route('/dc')
             } else {
                 // code to execute on data retrieval
                 // console.log("result from db is : ",data);
-                console.log("character:" + character)
+                //console.log("character:" + character)
 
                 for (var i = 0; i < data.length; i++) {
                     var row = data[i];
                     issues.push(row.id);
-                    console.log(row.id);
+                    console.log(row.id + ",");
                 }
             }
         }).then(console.log(issues));
@@ -116,7 +116,7 @@ async function getDCIssues(characters, callback) {
                     //console.log(results)
 
                     else {
-                        console.log(character);
+                        //console.log(character);
                         callback(null, results, character);
                         // console.log("character:" + dc[j])
                         //
@@ -144,12 +144,12 @@ app.route('/marvel')
             } else {
                 // code to execute on data retrieval
                 // console.log("result from db is : ",data);
-                console.log("character:" + character)
+                //console.log("character:" + character)
 
                 for (var i = 0; i < data.length; i++) {
                     var row = data[i];
                     issues.push(row.id);
-                    console.log(row.id);
+                    console.log(row.id + ",");
                 }
             }
         }).then(console.log(issues));
@@ -212,7 +212,7 @@ async function getMarvelIssues(characters, callback) {
                 //console.log(results)
 
                 else {
-                    console.log(character);
+                    //console.log(character);
                     callback(null, results, character);
                     // console.log("character:" + dc[j])
                     //

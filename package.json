@@ -10,6 +10,7 @@
     "express": "^4.17.1",
     "image-downloader": "^3.5.0",
     "mysql": "^2.18.1",
+    "puppeteer": "^2.1.1",
     "request": "^2.88.2"
   },
   "devDependencies": {},
