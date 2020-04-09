@@ -1,3 +1,9 @@
+/**
+ * This is a test for you to run to see if a default script for webscraping will
+ * work on your machine. Please refer to the README.md for more info on how to
+ * web-scrape for this project!
+ * @type {exports|*}
+ */
 const puppeteer = require('puppeteer');
 
 /**
