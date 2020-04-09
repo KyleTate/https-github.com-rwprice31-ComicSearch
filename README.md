@@ -20,18 +20,18 @@ To perform the script within /webscraping, do these steps:
  - Open /etc/tor/torrc (Search torrc in Finder)
  - It might appear as torrc.sample
  - Add these lines to the end of the file:
-    SocksPort 9050
-    SocksPort 9052
-    SocksPort 9053
-    SocksPort 9054
+    - SocksPort 9050
+    - SocksPort 9052
+    - SocksPort 9053
+    - SocksPort 9054
  - Restart tor client to apply the changes:
     sudo /etc/init.d/tor restart
     OR if downloaded and ran through brew:
     brew services restart tor
     
-3) Have tor running on your terminal as you run webscraper.js : node webscraper.js
+3) Make sure you have tor running on your terminal as you run webscraper.js : node webscraper.js
 
-4) Make sure you read comments to understanding what to add into webscraper.js in order to retrieve anything!
+4) Make sure you read comments to understand what to add into webscraper.js in order to retrieve anything!
 
 Happy Web-scraping!
     
