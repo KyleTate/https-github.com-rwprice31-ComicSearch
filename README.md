@@ -12,7 +12,7 @@ https://levelup.gitconnected.com/anonymous-web-scrapping-with-node-js-tor-apify-
 
 To perform the script within /webscraping, do these steps:
 
-1) Download tor (There's different method depending on what OS you're using...)
+1) Download tor (There's different methods depending on what OS you're using...)
  - For OSX: https://2019.www.torproject.org/docs/tor-doc-osx.html.en
  - Other methods for other OS's coming soon after further investigation...
  
