@@ -69,7 +69,7 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-comicsearch/.env
+webscraping/.env
 .env.test
 
 # parcel-bundler cache (https://parceljs.org/)
@@ -110,4 +110,4 @@ dist
 .idea
 
 #env
-comicsearch/.env
+webscraping/.env
