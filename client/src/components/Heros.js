@@ -42,18 +42,8 @@ class nonLandingPages extends Component {
 
             <img style={CBSStyle} src = {CBSText} alt={"comic book search"}/>
 
-
-
             </div>
 
-
-        // <BrowserRouter>
-            //     <Route path="/hero" render={
-            //         ()=>{
-            //             return( <h1>Hero Page</h1>  )} }/>
-            //
-            //
-            // </BrowserRouter>
         )
     }
 

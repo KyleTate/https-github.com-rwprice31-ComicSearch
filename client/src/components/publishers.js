@@ -4,6 +4,7 @@ import DCLogo from './DCLogo.png';
 import MarvelLogo from './Marvelcomics.png';
 import CBSText from './cbstext.png';
 import MarvelBackground from './marvelsidebackground.png';
+import {Link} from "react-router-dom";
 
 
 class Publishers extends Component{
@@ -45,8 +46,12 @@ class Publishers extends Component{
         <h2 style={SelectPublisher}>Select Publisher to Search By:</h2>
 
         <div className="Publisher-logo">
+            <Link to="/Heros">
         <button className="Publisher-btn " style={DCStyle}><img  src = {DCLogo} alt={"DC Universe"}  onClick={this.publisherClick} /></button>
+            </Link>
+            <Link to="/Heros">
         <button className="Publisher-btn "  style={MarvelStyle}><img style={Imagesize} src  = {MarvelLogo} alt={"Marvel Universe"}  onClick={this.publisherClick} /></button>
+            </Link>
         </div>
         {/*<img className="SideImage" src = {MarvelBackground} alt={"marvel comic pages"} />*/}
 
