@@ -38,5 +38,6 @@
   },
   "devDependencies": {
     "@emotion/core": "^10.0.28"
-  }
+  },
+  "proxy": "http://localhost:3000"
 }
