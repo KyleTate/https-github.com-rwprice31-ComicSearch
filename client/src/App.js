@@ -1,10 +1,11 @@
 import React,{Component}  from 'react';
 import Publishers from "./components/publishers";
 import './App.css';
-// import {BrowserRouter} from  'react-router-dom';
-import Route from 'react-router-dom/Route';
+import {BrowserRouter, Route, Switch} from  'react-router-dom';
+// import Route from 'react-router-dom/Route';
 import Heros from './components/Heros';
-import SimpleSlider from "./components/SimpleSlider";
+import Slider from "./components/SimpleSlider";
+import Results from "./components/Results";
 import DCLogo from "./components/DCLogo.png";
 
 import Image1 from "./components/hulk.png";
@@ -33,10 +34,16 @@ class App extends Component {
 
 
 
+
     render() {
         return (
+            <BrowserRouter>
             <div className="App">
 
+                <Route exact path="/" component={Publishers} />
+                <Route exact path="/Heros" component={Heros} />
+                <Route exact path="/Heros" component={Slider} />
+                <Route exact path="/Results" component={Results} />
 
                 {/* <Publishers />   */}
                 <Heros />
@@ -47,12 +54,8 @@ class App extends Component {
                    {/* <Publishers publisher={this.state.publishers}/> */}
                 {/* </div> */}
             </div>
-
-
-
-
+            </BrowserRouter>
         );
-
     }
 
 
