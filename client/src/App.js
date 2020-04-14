@@ -6,7 +6,10 @@ import {BrowserRouter, Route, Switch} from  'react-router-dom';
 import Heros from './components/Heros';
 import Slider from "./components/SimpleSlider";
 import Results from "./components/Results";
+import Dropdownfail from "./components/Dropdownfail"
+import ResultSlider from "./components/ResultSlider";
 import DCLogo from "./components/DCLogo.png";
+import HeroProfile from "./components/HeroProfile";
 
 import Image1 from "./components/hulk.png";
 import Image2 from "./components/thor.png";
@@ -43,6 +46,8 @@ class App extends Component {
                 <Route exact path="/Heros" component={Heros} />
                 <Route exact path="/Heros" component={Slider} />
                 <Route exact path="/Results" component={Results} />
+                <Route exact path="/Results" component={ResultSlider} />
+                <Route exact path="/Results" component={HeroProfile} />
 
 
                 {/*<div>*/}

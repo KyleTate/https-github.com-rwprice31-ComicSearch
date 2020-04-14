@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import FontAwesome from 'react-fontawesome'
 
 
-class Dropdown extends Component{
+class Dropdownfail extends Component{
     constructor(props){
         super(props)
         this.state = {
@@ -73,4 +73,4 @@ class Dropdown extends Component{
     }
 }
 
-export default Dropdown
+export default Dropdownfail

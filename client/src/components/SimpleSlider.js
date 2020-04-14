@@ -68,14 +68,14 @@ export default class SimpleSlider extends Component {
                 {
                     id: 9,
                     Title: "Luke Cage",
-                    selected: false
+                    Selected: false
                 },
             ]
         }
     }
 
     // Method for grabbing id and hero name when hero image btn is selected, having an issue with selcted property being undefined
-    //
+
     // handleClick = (id) => {
     //     let items = [...this.state.items];
     //
