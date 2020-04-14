@@ -10,6 +10,7 @@ import Dropdownfail from "./components/Dropdownfail"
 import ResultSlider from "./components/ResultSlider";
 import DCLogo from "./components/DCLogo.png";
 import HeroProfile from "./components/HeroProfile";
+import ResultImageGrid from "./components/ResultImageGrid";
 
 import Image1 from "./components/hulk.png";
 import Image2 from "./components/thor.png";
@@ -46,14 +47,17 @@ class App extends Component {
                 <Route exact path="/" component={Publishers} />
                 <Route exact path="/Heros" component={Heros} />
                 <Route exact path="/Heros" component={Slider} />
+                <Route exact path="/Heros" component={Gallery} />
                 <Route exact path="/Results" component={Results} />
                 <Route exact path="/Results" component={ResultSlider} />
                 <Route exact path="/Results" component={HeroProfile} />
+                <Route exact path="/Results" component={ResultImageGrid} />
+
 
                 {/* <Publishers />   */}
-                <Heros />
+                {/*<Heros />*/}
                 {/* <SimpleSlider /> */}
-                <Gallery/>
+                {/*<Gallery/>*/}
 
                 {/* <div> */}
                    {/* <Publishers publisher={this.state.publishers}/> */}

@@ -26,19 +26,34 @@ export default class HeroProfile extends Component {
             <div>
                 <img id="Hero-Profile-Picture"  src = {ironMan} />
                 <img id="Publisher-Profile"  src = {marvelLogo} />
-                <img id="Comic-Search-Text"  src = {comicSearch} />
+                <img id="Comic-Search-Text-Profile"  src = {comicSearch} />
+
+                <ul id="Result-Stories">
+                    <li>Stories...</li>
+                    <li>Stories...</li>
+                    <li>Stories...</li>
+                    <li>Stories...</li>
+                    <li>Stories...</li>
+                    <li>Stories...</li>
+                    <li>Stories...</li>
+                    <li>Stories...</li>
+                    <li>Stories...</li>
+                    <li>Stories...</li>
+                    <li>Stories...</li>
+                    <li>Stories...</li>
+                    <li>Stories...</li>
+                    <li>Stories...</li>
+                    <li>Stories...</li>
+                    <li>Stories...</li>
+                    <li>Stories...</li>
+                    <li>Stories...</li>
+                    <li>Stories...</li>
+                    <li>Stories...</li>
+                    <li>Stories...</li>
+                </ul>
 
 
 
-                <h2>overflow:</h2>
-                <div className="ex3">
-                sfafawsfASFAGASGVADBGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
-                    sfafawsfASFAGASGVADBGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGs
-                    fafawsfASFAGASGVADBGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
-                    fafawsfASFAGASGVADBGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
-                    fafawsfASFAGASGVADBGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
-
-                </div>
 
 
             </div>

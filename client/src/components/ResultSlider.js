@@ -127,7 +127,7 @@ export default class ResultSlider extends Component {
         return (
             <div>
                 <h2 id="Quick-Fix">Heros </h2>
-                <Slider className="Slider" {...settings}>
+                <Slider className="Result-Slider" {...settings}>
 
                     <div >
                         <Link onClick={this.handleClick} to="/Results"> <img className="Hero-Images"  src = {thor} /> </Link>

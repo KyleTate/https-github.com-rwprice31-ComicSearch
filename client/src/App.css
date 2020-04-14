@@ -1,107 +1,3 @@
-/*home page*/
-.Title {
-  align-items: center;
-  justify-content: center;
-}
-
-.App {
-  text-align: center;
-  background-color: #282c34;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.Publisher-btn:Hover {
-  transform: scale(1.1);
- }
-
-
-.Publisher-logo:Hover {
-  /*height: 20%;*/
-  /*width: 20%;*/
-  display: inline;
-  overflow: hidden;
-  outline:none;
-  /*background-repeat:no-repeat;*/
-  border: none;
-}
-
-.ripple {
-  background-color: yellow;
-
-  mix-blend-mode: screen;
-  animation: ripple 1000ms ease-out forwards;
-}
-
-.Hero-Images {
-  height: 400px;
-  width: 250px;
-
-}
-
-#Publisher-Profile{
-  position: relative;
-  top: -1678px;
-  right: 1005px;
-  transform: scale(0.45);
-}
-
-#Comic-Search-Text{
-  position: relative;
-  top: -2115px;
-  right: 585px;
-  transform: scale(0.35);
-}
-
-#Hero-Profile-Picture{
-  position: relative;
-  top: -535px;
-  right: 550px;
-  transform: scale(0.4);
-}
-
-.ex3 {
-  background-color: lightblue;
-  width: 110px;
-  height: 110px;
-  overflow: auto;
-  position: relative;
-  top: -535px;
-  right: 550px;
-}
-
-#Search-Submit {
-  position: absolute;
-  top: 225px;
-  left: 830px;
-}
-
-
-#Search-Bar {
-  position: absolute;
-  top: 225px;
-  left: 655px;
-
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-
-.Slider{
-  transform: scale(0.65);
- position: relative;
-  top: -835px;
-  right: -250px;
-  border-style: groove;
-}
-
 .App-header {
 
   min-height: 20vh;
@@ -148,3 +44,135 @@
 #Quick-Fix {
   opacity: 0%;
 }
+
+/*home page*/
+.Title {
+  align-items: center;
+  justify-content: center;
+}
+
+.App {
+  text-align: center;
+  background-color: #282c34;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.Publisher-btn:Hover {
+  transform: scale(1.1);
+ }
+
+
+.Publisher-logo:Hover {
+  /*height: 20%;*/
+  /*width: 20%;*/
+  display: inline;
+  overflow: hidden;
+  outline:none;
+  /*background-repeat:no-repeat;*/
+  border: none;
+}
+
+.ripple {
+  background-color: yellow;
+
+  mix-blend-mode: screen;
+  animation: ripple 1000ms ease-out forwards;
+}
+
+.Hero-Images {
+  height: 400px;
+  width: 250px;
+
+}
+
+
+
+.ex3 {
+  background-color: lightblue;
+  width: 110px;
+  height: 110px;
+  overflow: auto;
+  position: relative;
+  top: -535px;
+  right: 550px;
+}
+
+#Search-Submit {
+  position: absolute;
+  top: 225px;
+  left: 830px;
+}
+
+
+#Search-Bar {
+  position: absolute;
+  top: 225px;
+  left: 655px;
+
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+
+
+
+
+/*results page*/
+.Result-Slider{
+  transform: scale(0.65);
+  position: relative;
+  top: -835px;
+  right: -250px;
+  border-style: groove;
+}
+
+#Result-Image-Grid{
+  transform: scale(0.33);
+  position: absolute;
+  top: 0px;
+  left: -4px;
+  /*top: -2500px;*/
+  /*right: 3px;*/
+  border-style: groove;
+}
+
+#Publisher-Profile{
+  position: absolute;
+  top: 0px;
+  right: 1115px;
+  transform: scale(0.45);
+}
+
+#Comic-Search-Text-Profile{
+  position: absolute;
+  top: -50px;
+  right: 920px;
+  transform: scale(0.35);
+}
+
+#Hero-Profile-Picture{
+  position: absolute;
+  top: 0px;
+  right: 940px;
+  transform: scale(0.4);
+}
+
+#Result-Stories{
+  position: absolute;
+  top: 400px;
+  right: 240px;
+  height:300px;
+  width:18%;
+  overflow-y:scroll;
+  list-style-type: none;
+}
+
+
