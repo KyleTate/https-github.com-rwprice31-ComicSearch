@@ -1,21 +1,22 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 
-import hulk from './hulk.png';
-import deadPool from './deadpool.jpg';
-import punisher from './punisher.jpg';
-import CptnAmr from './CaptianAmerica.png';
-import lukeCage from './lukecage.jpg';
-import silverSurfer from './silversurfer.jpg';
-import ironMan from './IronMan.png';
-import blackPanther from './blackpanther.jpg';
-import spiderMan from './spiderman.png';
-import wolverine from './wolverine.jpg';
+import joker from './joker.jpg';
+import superMan from './superman.jpg';
+import batMan from './batman.jpg'
+import wonderWoman from './wonderwoman.jpg';
+import johnC from './johnconstantine.jpg';
+import aquaMan from './aquaman.jpg';
+import greenLantern from './greenlantern.jpg';
+import bane from './bane.jpg';
+import greenArrow from './greenarrow.jpg';
+import theFlash from './flash.jpg';
+
 import {Link} from "react-router-dom";
 
 export default class SimpleSlider extends Component {
 
-     heroName;
+    heroName;
 
     constructor(props) {
         super(props);
@@ -23,52 +24,52 @@ export default class SimpleSlider extends Component {
             items: [
                 {
                     id: 0,
-                    Title: "Spider Man",
+                    Title: "Joker",
                     selected: false
                 },
                 {
                     id: 1,
-                    Title: "Hulk",
+                    Title: "Superman",
                     selected: false
                 },
                 {
                     id: 2,
-                    Title: "Iron Man",
+                    Title: "Batman",
                     selected: false
                 },
                 {
                     id: 3,
-                    Title: "Wolverine",
+                    Title: "Wonder Woman",
                     selected: false
                 },
                 {
                     id: 4,
-                    Title: "Deadpool",
+                    Title: "Green Lantern",
                     selected: false
                 },
                 {
                     id: 5,
-                    Title: "Black Panther",
+                    Title: "John Constantine",
                     selected: false
                 },
                 {
                     id: 6,
-                    Title: "Punisher",
+                    Title: "Green Arrow",
                     selected: false
                 },
                 {
                     id: 7,
-                    Title: "Captain America",
+                    Title: "Aquaman",
                     selected: false
                 },
                 {
                     id: 8,
-                    Title: "Silver Surfer",
+                    Title: "Bane",
                     selected: false
                 },
                 {
                     id: 9,
-                    Title: "Luke Cage",
+                    Title: "The Flash",
                     Selected: false
                 },
             ]
@@ -131,34 +132,34 @@ export default class SimpleSlider extends Component {
                 <Slider {...settings}>
 
                     <div >
-                        <Link onClick={this.handleClick} to="/Results"> <img className="Hero-Images"  src = {spiderMan} /> </Link>
+                        <Link onClick={this.handleClick} to="/Results"> <img className="Hero-Images"  src = {joker} /> </Link>
                     </div>
                     <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {hulk} /> </Link>
+                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {superMan} /> </Link>
                     </div>
                     <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {CptnAmr} /> </Link>
+                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {batMan} /> </Link>
                     </div>
                     <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {deadPool} /> </Link>
+                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {wonderWoman} /> </Link>
                     </div>
                     <div>
-                        <Link onClick={this.handleClick} to="/Results"> <img className="Hero-Images"  src = {blackPanther} /> </Link>
+                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {greenLantern} /> </Link>
                     </div>
                     <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {wolverine} /> </Link>
+                        <Link onClick={this.handleClick} to="/Results"> <img className="Hero-Images"  src = {johnC} /> </Link>
                     </div>
                     <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {punisher} /> </Link>
+                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {greenArrow} /> </Link>
                     </div>
                     <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {ironMan} /> </Link>
+                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {aquaMan} /> </Link>
                     </div>
                     <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {lukeCage} /> </Link>
+                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {bane} /> </Link>
                     </div>
                     <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {silverSurfer} /> </Link>
+                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {theFlash} /> </Link>
                     </div>
 
                 </Slider>
