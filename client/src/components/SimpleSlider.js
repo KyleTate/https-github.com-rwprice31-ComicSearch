@@ -2,17 +2,17 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import GetInput from "./GetInput";
 import hulk from './hulk.png';
-import thor from './thor.png';
+import deadPool from './deadpool.jpg';
+import punisher from './punisher.jpg';
 import CptnAmr from './CaptianAmerica.png';
-import antMan from './Antman.png';
-import blackKnight from './blackknight.png';
+import lukeCage from './lukecage.jpg';
+import silverSurfer from './silversurfer.jpg';
 import ironMan from './IronMan.png';
-import moonKnight from './moonknight.png';
-import blackPanther from './BlackPanther.png';
-import sentry from './sentry.png';
+import blackPanther from './blackpanther.jpg';
+import spiderMan from './spiderman.png';
+import wolverine from './wolverine.jpg';
 import {Link} from "react-router-dom";
 import HeroProfile from "./HeroProfile";
-import Heros from  "./Heros"
 
 
 // const     data = {
@@ -177,11 +177,13 @@ class SimpleSlider extends Component {
         return (
             <div>
 
-                <h2 id="Quick-Fix">Heros </h2>
+                <h2 id="Quick-Fix">Hero </h2>
                 <Slider className="Slider" {...settings}>
 
-                    <div >
-                        <Link  to="/Results"> <img onClick={this.handleClick} className="Hero-Images"  src = {thor}  /> </Link>
+                    <div>
+
+
+                        <Link onClick={this.handleClick} to="/Results"> <img className="Hero-Images"  src = {spiderMan} /> </Link>
                     </div>
                     <div>
                         <Link  onClick={this.handleClick} to="/Results" value="hulk"> <img className="Hero-Images"  src = {hulk} /> </Link>
@@ -190,23 +192,26 @@ class SimpleSlider extends Component {
                         <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {CptnAmr} /> </Link>
                     </div>
                     <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {antMan} /> </Link>
+                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {deadPool} /> </Link>
                     </div>
                     <div >
                         <Link onClick={this.handleClick} to="/Results"> <img className="Hero-Images"  src = {blackPanther} /> </Link>
                     </div>
                     <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {moonKnight} /> </Link>
+                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {wolverine} /> </Link>
+                    </div>
+                    <div>
+                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {punisher} /> </Link>
                     </div>
                     <div>
 
                         <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {ironMan} /> </Link>
                     </div>
                     <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {blackKnight} /> </Link>
+                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {lukeCage} /> </Link>
                     </div>
                     <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {sentry} /> </Link>
+                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {silverSurfer} /> </Link>
                     </div>
 
                 </Slider>

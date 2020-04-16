@@ -7,15 +7,36 @@ import MarvelBackground from './marvelsidebackground.png';
 import {Link} from "react-router-dom";
 
 
-class Publishers extends Component{
+class Publishers extends Component {
+    // Initialize the state
+    constructor(props) {
+        super(props);
+        this.state = {
+            list: []
+        }
+    }
+
+    // // Fetch the list on first mount
+    // componentDidMount() {
+    //     this.getList();
+    // }
+    //
+    // // Retrieves the list of items from the Express app
+    // getList = () => {
+    //     fetch('/test')
+    //         .then(res => res.json())
+    //         .then(list => this.setState({list}))
+    // }
+
     render() {
+        const {list} = this.state;
 
         const MarvelStyle = {
-         position: "relative",
-         top: '-55px',
-         backgroundColor: 'transparent',
-         border: 'none',
-    };
+            position: "relative",
+            top: '-55px',
+            backgroundColor: 'transparent',
+            border: 'none',
+        };
 
         const DCStyle = {
             position: "relative",
@@ -24,7 +45,7 @@ class Publishers extends Component{
             border: 'none',
         };
 
-        const  SelectPublisher = {
+        const SelectPublisher = {
             textSizeAdjust: '20px',
             color: 'white',
         };
@@ -34,16 +55,19 @@ class Publishers extends Component{
             height: '360px',
         };
 
-        return(
-    <div>
-        <img id="CBS-Text" src = {CBSText} />
+        return (
 
-        <h1 id="Description-text">The purpose of this website is to help introduce new readers to comics and to be an easy way to
-            find series of different characters
-            Cover thumbnails are used for identification purposes only. All rights to cover images reserved
-            by the respective copyright holders.</h1>
 
-        <h2 style={SelectPublisher}>Select Publisher to Search By:</h2>
+                <div>
+                    <img id="CBS-Text" src={CBSText}/>
+
+                    <h1 id="Description-text">The purpose of this website is to help introduce new readers to comics and
+                        to
+                        be an easy way to
+                        find series of different characters
+                        Cover thumbnails are used for identification purposes only. All rights to cover images reserved
+                        by the respective copyright holders.</h1>
+
 
         <div className="Publisher-logo">
             <Link to="/Heros">
@@ -55,10 +79,31 @@ class Publishers extends Component{
         </div>
         {/*<img className="SideImage" src = {MarvelBackground} alt={"marvel comic pages"} />*/}
 
-    </div>
+                    <h2 style={SelectPublisher}>Select Publisher to Search By:</h2>
+
+
+                    <div className="Publisher-logo">
+                        <Link to="/DC">
+                            <button className="Publisher-btn " style={DCStyle}><img src={DCLogo} alt={"DC Universe"}
+                                                                                    onClick={this.publisherClick}/>
+                            </button>
+                        </Link>
+                        <Link to="/Marvel">
+                            <button className="Publisher-btn " style={MarvelStyle}><img style={Imagesize}
+                                                                                        src={MarvelLogo}
+                                                                                        alt={"Marvel Universe"}
+                                                                                        onClick={this.publisherClick}/>
+                            </button>
+                        </Link>
+                    </div>
+                    {/*<img className="SideImage" src = {MarvelBackground} alt={"marvel comic pages"} />*/}
+
+                </div>
+            // </div>
 
 
         );
-      }
     }
+}
+
 export default Publishers;

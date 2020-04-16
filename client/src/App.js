@@ -3,7 +3,7 @@ import Publishers from "./components/publishers";
 import './App.css';
 import {BrowserRouter, Route, Switch} from  'react-router-dom';
 // import Route from 'react-router-dom/Route';
-import Heros from './components/Heros';
+import Characters from './components/Characters';
 import Slider from "./components/SimpleSlider";
 import Results from "./components/Results";
 import Dropdownfail from "./components/Dropdownfail"
@@ -17,6 +17,7 @@ import Image2 from "./components/thor.png";
 import Image3 from "./components/CaptianAmerica.png";
 
 import Gallery from "./components/imagegrid";
+import DC_charactersSlider from "./components/DC_charactersSlider";
 
 
 
@@ -45,9 +46,18 @@ class App extends Component {
             <div className="App">
 
                 <Route exact path="/" component={Publishers} />
-                <Route exact path="/Heros" component={Heros} />
-                <Route exact path="/Heros" component={Slider} />
+
+                {/*<Route exact path="/Heros" component={Heros} />*/}
+                {/*<Route exact path="/Heros" component={Slider} />*/}
                 {/*<Route exact path="/Heros" component={Gallery} />*/}
+=======
+                <Route exact path="/Marvel" component={Characters} />
+                <Route exact path="/Marvel" component={Slider} />
+                <Route exact path="/Marvel" component={Gallery} />
+                <Route exact path="/DC" component={Characters} />
+                <Route exact path="/DC" component={DC_charactersSlider} />
+                {/*<Route exact path="/DC" component={Gallery} />*/}
+
                 <Route exact path="/Results" component={Results} />
                 <Route exact path="/Results" component={ResultSlider} />
                 <Route exact path="/Results" component={HeroProfile} />
