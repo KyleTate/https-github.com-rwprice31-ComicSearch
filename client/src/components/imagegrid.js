@@ -13,12 +13,14 @@ import sentry from './sentry.png';
 
 const IMAGES =
 [{
+
         src: antman,
         thumbnail: antman,
         thumbnailWidth: 174,
         thumbnailHeight: 320,
         tags: [{value: "Ant-Man", title: "Ant-Man"}],
         caption: "Antman"
+
 },
 {
         src: blackknight,
@@ -70,6 +72,7 @@ const IMAGES =
         caption: "Moon Knight"
 },
 {
+
         src: sentry,
         thumbnail: sentry,
         thumbnailWidth: 174,
@@ -89,7 +92,8 @@ const IMAGES =
 export default class imagegrid extends Component {
         render() {
                 return (
-                    <div style = {{
+
+                <div  style = {{
                         display: "box",
                         minHeight: "1px",
                         width: "100%",
@@ -102,6 +106,7 @@ export default class imagegrid extends Component {
                         rowHeight={520}
                         />
                 </div>
+
                 );
             }
 }

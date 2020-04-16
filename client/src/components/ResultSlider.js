@@ -1,20 +1,17 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-
-import hulk from './hulk.png';
-import thor from './thor.png';
-import CptnAmr from './CaptianAmerica.png';
-import antMan from './Antman.png';
-import blackKnight from './blackknight.png';
-import ironMan from './IronMan.png';
-import moonKnight from './moonknight.png';
-import blackPanther from './BlackPanther.png';
-import sentry from './sentry.png';
+import ser1 from './series1.jpg';
+import ser2 from './series2.jpg';
+import ser3 from './series3.jpg';
+import ser4 from './series4.jpg';
+import ser5 from './series5.jpg';
 import {Link} from "react-router-dom";
 
 export default class ResultSlider extends Component {
 
-    heroName;
+
+charName;
+
 
     constructor(props) {
         super(props);
@@ -22,65 +19,41 @@ export default class ResultSlider extends Component {
             items: [
                 {
                     id: 0,
-                    Title: "Spider Man",
+                    Title: this.charName,
                     selected: false
                 },
                 {
                     id: 1,
-                    Title: "Hulk",
+                    Title: this.charName,
                     selected: false
                 },
                 {
                     id: 2,
-                    Title: "Iron Man",
+                    Title: this.charName,
                     selected: false
                 },
                 {
                     id: 3,
-                    Title: "Wolverine",
+                    Title: this.charName,
                     selected: false
                 },
                 {
                     id: 4,
-                    Title: "Deadpool",
+                    Title: this.charName,
                     selected: false
                 },
-                {
-                    id: 5,
-                    Title: "Black Panther",
-                    selected: false
-                },
-                {
-                    id: 6,
-                    Title: "Punisher",
-                    selected: false
-                },
-                {
-                    id: 7,
-                    Title: "Captain America",
-                    selected: false
-                },
-                {
-                    id: 8,
-                    Title: "Silver Surfer",
-                    selected: false
-                },
-                {
-                    id: 9,
-                    Title: "Luke Cage",
-                    Selected: false
-                },
+
             ]
         }
     }
 
     // Method for grabbing id and hero name when hero image btn is selected, having an issue with selcted property being undefined
-
+    //
     // handleClick = (id) => {
     //     let items = [...this.state.items];
     //
-    //     items[id].selected = items[id].selected ? false : true;
-    //     items["Title"].selected = this.heroName;
+    //
+    //     items.selected.id = charName;
     //
     //     this.setState({
     //         items
@@ -89,9 +62,11 @@ export default class ResultSlider extends Component {
     // }
 
 
+
+
     render() {
         const settings = {
-            dots: true,
+            dots: false,
             infinite: false,
             speed: 500,
             slidesToShow: 5,
@@ -130,33 +105,20 @@ export default class ResultSlider extends Component {
                 <Slider className="Result-Slider" {...settings}>
 
                     <div >
-                        <Link onClick={this.handleClick} to="/Results"> <img className="Hero-Images"  src = {thor} /> </Link>
+                        <button onClick={this.handleClick} to="/Results"> <img className="Hero-Images"  src = {ser1} /> </button>
                     </div>
                     <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {hulk} /> </Link>
+                        <button onClick={this.handleInput} to="/Results">  <img className="Hero-Images"  src = {ser2} /> </button>
                     </div>
                     <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {CptnAmr} /> </Link>
+                        <button onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {ser3} /> </button>
                     </div>
                     <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {antMan} /> </Link>
+                        <button onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {ser4} /> </button>
                     </div>
                     <div>
-                        <Link onClick={this.handleClick} to="/Results"> <img className="Hero-Images"  src = {blackPanther} /> </Link>
+                        <button onClick={this.handleClick} to="/Results"> <img className="Hero-Images"  src = {ser5} /> </button>
                     </div>
-                    <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {moonKnight} /> </Link>
-                    </div>
-                    <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {ironMan} /> </Link>
-                    </div>
-                    <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {blackKnight} /> </Link>
-                    </div>
-                    <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {sentry} /> </Link>
-                    </div>
-
                 </Slider>
             </div>
         );

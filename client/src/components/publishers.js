@@ -47,10 +47,10 @@ class Publishers extends Component{
 
         <div className="Publisher-logo">
             <Link to="/Heros">
-        <button className="Publisher-btn " style={DCStyle}><img  src = {DCLogo} alt={"DC Universe"}  onClick={this.publisherClick} /></button>
+        <button className="Publisher-btn " style={DCStyle}><img  src = {DCLogo} alt={"DC Universe"} /></button>
             </Link>
             <Link to="/Heros">
-        <button className="Publisher-btn "  style={MarvelStyle}><img style={Imagesize} src  = {MarvelLogo} alt={"Marvel Universe"}  onClick={this.publisherClick} /></button>
+        <button className="Publisher-btn "  style={MarvelStyle}><img style={Imagesize} src  = {MarvelLogo} alt={"Marvel Universe"}  /></button>
             </Link>
         </div>
         {/*<img className="SideImage" src = {MarvelBackground} alt={"marvel comic pages"} />*/}

@@ -13,6 +13,9 @@
   color: white;
   min-height: 100vh;
   font-size: 20px;
+  position: relative;
+  right: -210px;
+  top: 10px;
 
 }
 
@@ -83,9 +86,30 @@
   animation: ripple 1000ms ease-out forwards;
 }
 
+.Slider{
+  transform: scale(0.95);
+  border-style: groove;
+  padding-left: 45px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#btnTest{
+  position: absolute;
+  top: 200px;
+  right: 210px;;
+  overflow-y:scroll;
+
+}
+
 .Hero-Images {
   height: 400px;
   width: 250px;
+
+
+}
+.Hero-Images:hover { opacity:.8;
+
 
 }
 
@@ -132,6 +156,10 @@
   top: -835px;
   right: -250px;
   border-style: groove;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
 }
 
 #Result-Image-Grid{
@@ -142,6 +170,7 @@
   /*top: -2500px;*/
   /*right: 3px;*/
   border-style: groove;
+
 }
 
 #Publisher-Profile{
@@ -167,12 +196,32 @@
 
 #Result-Stories{
   position: absolute;
-  top: 400px;
-  right: 240px;
-  height:300px;
-  width:18%;
+  top: 350px;
+  right: 35px;
+  height:340px;
+  width:450px;
   overflow-y:scroll;
+  overflow-x: hidden;
   list-style-type: none;
 }
 
+.custom-Dropdown{
+  -webkit-touch-callout: none; 
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 50px;
+  width: 450px;
+  overflow-x: hidden;
 
+}
+
+.Result-Character-Name{
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  top: 620px;
+  left: 150px;
+}
