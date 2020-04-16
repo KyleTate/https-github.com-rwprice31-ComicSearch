@@ -69,14 +69,7 @@ class Publishers extends Component {
                         by the respective copyright holders.</h1>
 
 
-        <div className="Publisher-logo">
-            <Link to="/Heros">
-        <button className="Publisher-btn " style={DCStyle}><img  src = {DCLogo} alt={"DC Universe"} /></button>
-            </Link>
-            <Link to="/Heros">
-        <button className="Publisher-btn "  style={MarvelStyle}><img style={Imagesize} src  = {MarvelLogo} alt={"Marvel Universe"}  /></button>
-            </Link>
-        </div>
+
         {/*<img className="SideImage" src = {MarvelBackground} alt={"marvel comic pages"} />*/}
 
                     <h2 style={SelectPublisher}>Select Publisher to Search By:</h2>

@@ -47,13 +47,11 @@ class App extends Component {
 
                 <Route exact path="/" component={Publishers} />
 
-                {/*<Route exact path="/Heros" component={Heros} />*/}
-                {/*<Route exact path="/Heros" component={Slider} />*/}
-                {/*<Route exact path="/Heros" component={Gallery} />*/}
-=======
+
+
                 <Route exact path="/Marvel" component={Characters} />
                 <Route exact path="/Marvel" component={Slider} />
-                <Route exact path="/Marvel" component={Gallery} />
+                {/*<Route exact path="/Marvel" component={Gallery} />*/}
                 <Route exact path="/DC" component={Characters} />
                 <Route exact path="/DC" component={DC_charactersSlider} />
                 {/*<Route exact path="/DC" component={Gallery} />*/}
@@ -65,7 +63,6 @@ class App extends Component {
 
 
                 {/* <Publishers />   */}
-                {/*<Heros />*/}
                 {/* <SimpleSlider /> */}
                 {/*<Gallery/>*/}
 

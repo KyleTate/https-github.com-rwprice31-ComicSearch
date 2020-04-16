@@ -5,7 +5,6 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Publishers from "./components/publishers";
-import Heros from "./components/Heros";
 import Slider from "./components/SimpleSlider";
 
 
