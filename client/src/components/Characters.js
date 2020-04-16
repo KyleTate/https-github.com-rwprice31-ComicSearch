@@ -35,20 +35,15 @@ class nonLandingPages extends Component {
 
         return (
             <div>
+                <input id="Search-Bar" type="text" placeholder="Search by hero.." />
+                <button id="Search-Submit" type="submit">Submit</button>
+
             <img style={Marvel} src  = {MarvelLogo} alt={"Marvel Universe"}/>
 
             <img style={CBSStyle} src = {CBSText} alt={"comic book search"}/>
 
             </div>
 
-
-        // <BrowserRouter>
-            //     <Route path="/hero" render={
-            //         ()=>{
-            //             return( <h1>Hero Page</h1>  )} }/>
-            //
-            //
-            // </BrowserRouter>
         )
     }
 
