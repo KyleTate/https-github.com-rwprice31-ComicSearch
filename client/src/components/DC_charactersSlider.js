@@ -94,7 +94,7 @@ export default class SimpleSlider extends Component {
     render() {
         const settings = {
             dots: true,
-            infinite: false,
+            infinite: true,
             speed: 500,
             slidesToShow: 5,
             slidesToScroll: 4,
@@ -129,7 +129,7 @@ export default class SimpleSlider extends Component {
         return (
             <div>
                 <h2 id="Quick-Fix">Heros </h2>
-                <Slider {...settings}>
+                <Slider  className="Slider" {...settings}>
 
                     <div >
                         <Link onClick={this.handleClick} to="/Results"> <img className="Hero-Images"  src = {joker} /> </Link>
