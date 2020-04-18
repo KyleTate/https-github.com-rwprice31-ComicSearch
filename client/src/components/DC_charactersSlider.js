@@ -90,6 +90,20 @@ export default class SimpleSlider extends Component {
     //
     // }
 
+    // handleClick = (id) => {
+    //     let items = [...this.state.items];
+    //
+    //     items[id].selected = items[id].selected ? false : true;
+    //     items["Title"].selected = this.heroName;
+    //
+    //     this.setState({
+    //         items
+    //     });
+    //
+    // }
+
+
+
 
     render() {
         const settings = {

@@ -7,11 +7,11 @@ const bodyParser = require('body-parser');
 
 const mysql = require('mysql');
 
-  let connection = mysql.createConnection({
-      host: process.env.DB_HOST,
-      user: process.env.DB_USER,
-      database: process.env.DB_DATABASE,
-      password: process.env.DB_PASS
+let connection = mysql.createConnection({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    database: process.env.DB_DATABASE,
+    password: process.env.DB_PASS
 });
 
 // // [START cloud_sql_mysql_mysql_create]
@@ -62,7 +62,7 @@ const mysql = require('mysql');
 // createPool();
 // [END cloud_sql_mysql_mysql_create]
 
-connection.connect(function(err) {
+connection.connect(function (err) {
     if (err) {
         console.error('Error connecting: ' + err.stack);
         return;
@@ -78,19 +78,106 @@ connection.connect(function(err) {
 //     });
 
 app.route('/test')
-    .get(function(req, res, next) {
+    .get(function (req, res, next) {
         (connection.query(
             "SELECT * FROM `gcd_series` LIMIT 3",
-            function(error, results, fields) {
+            function (error, results, fields) {
                 if (error) throw error;
-                var json = res.json(results);
-                res.send(json);
+                res.send(results);
+                // var json = res.json(results);
+                // res.send(json);
             }
         ))
     });
 
+app.get('/series/:publisher/:character', function (req, res, next) {
+    const publisher = req.params.publisher;
+    const character = req.params.character;
+
+    (connection.query(
+        "select distinct i.series_id, s.name, s.publishing_format, s.year_began, s.year_ended, \n" +
+        "count(i.id) as '# issues that have character in all comic stories', s.issue_count as 'all issues in series',\n" +
+        "((count(i.id)/s.issue_count) * 100) \n" +
+        "as 'average percent of when character appears in all issues' from gcd_issue i\n" +
+        "join gcd_series s on i.series_id = s.id\n" +
+        "where i.id in (\n" +
+        "select issue_id from (\n" +
+        "select s.issue_id, sum(case when s.characters like '%" + character + "%' and type_id = 19 then 1 else 0 end) as 'stories w/ character in it',\n" +
+        "sum(case when type_id = 19 then 1 else 0 end) as 'All comic story types', (sum(case when s.characters like '%" + character + "%' and type_id = 19 \n" +
+        "then 1 else 0 end) /\n" +
+        "sum(case when type_id = 19 then 1 else 0 end)) as 'true percentage', count(s.id) as 'total stories',\n" +
+        "(sum(case when s.characters like '%" + character + "%' then 1 else 0 end)/ count(s.id)) as 'percentage of stories of when character appears within issue'\n" +
+        "from gcd_issue i\n" +
+        "join gcd_story s on i.id = s.issue_id\n" +
+        "where i.id in (\n" +
+        "select issue_id from gcd_story\n" +
+        "where feature like '%" + character + "%' or title like '%" + character + "%' or synopsis like '%" + character + "%' and page_count > 5 and type_id = 19)\n" +
+        "group by i.id\n" +
+        "having (sum(case when s.characters like '%" + character + "%' and type_id = 19 then 1 else 0 end) /\n" +
+        "sum(case when type_id = 19 then 1 else 0 end)) >= 1) child)\n" +
+        "and s.publisher_id in (\n" +
+        "select id from gcd_publisher\n" +
+        "where name like '%" + publisher + "%' and country_id = 225)\n" +
+        "and has_gallery = 1\n" +
+        "group by series_id\n" +
+        "having ((count(i.id)/s.issue_count) * 100) >= 100\n" +
+        "limit 5;",
+        function (error, results, fields) {
+            if (error) throw error;
+            res.send(results);
+            // var json = res.json(results);
+            // res.send(json);
+        }
+    ))
+});
+
+app.get('/issues/:publisher/:character', function (req, res, next) {
+    const publisher = req.params.publisher;
+    const character = req.params.character;
+
+    (connection.query(
+        "select * from gcd_issue i \n" +
+        "join ( \n" +
+        "select distinct i.series_id, s.name, s.publishing_format, s.year_began, s.year_ended, \n" +
+        "count(i.id) as '# issues that have character in all comic stories', s.issue_count as 'all issues in series',\n" +
+        "((count(i.id)/s.issue_count) * 100) \n" +
+        "as 'average percent of when character appears in all issues' from gcd_issue i\n" +
+        "join gcd_series s on i.series_id = s.id\n" +
+        "where i.id in (\n" +
+        "select issue_id from (\n" +
+        "select s.issue_id, sum(case when s.characters like '%" + character + "%' and type_id = 19 then 1 else 0 end) as 'stories w/ character in it',\n" +
+        "sum(case when type_id = 19 then 1 else 0 end) as 'All comic story types', (sum(case when s.characters like '%" + character + "%' and type_id = 19 \n" +
+        "then 1 else 0 end) /\n" +
+        "sum(case when type_id = 19 then 1 else 0 end)) as 'true percentage', count(s.id) as 'total stories',\n" +
+        "(sum(case when s.characters like '%" + character + "%' then 1 else 0 end)/ count(s.id)) as 'percentage of stories of when character appears within issue'\n" +
+        "from gcd_issue i\n" +
+        "join gcd_story s on i.id = s.issue_id\n" +
+        "where i.id in (\n" +
+        "select issue_id from gcd_story\n" +
+        "where feature like '%" + character + "%' or title like '%" + character + "%' or synopsis like '%" + character + "%' and page_count > 5 and type_id = 19)\n" +
+        "group by i.id\n" +
+        "having (sum(case when s.characters like '%" + character + "%' and type_id = 19 then 1 else 0 end) /\n" +
+        "sum(case when type_id = 19 then 1 else 0 end)) >= 1) child)\n" +
+        "and s.publisher_id in (\n" +
+        "select id from gcd_publisher\n" +
+        "where name like '%" + publisher + "%' and country_id = 225)\n" +
+        "and has_gallery = 1\n" +
+        "group by series_id\n" +
+        "having ((count(i.id)/s.issue_count) * 100) >= 100\n" +
+        "limit 5) d\n" +
+        "using (series_id)\n" +
+        "where d.series_id is not null and i.variant_of_id is null;",
+        function (error, results, fields) {
+            if (error) throw error;
+            res.send(results);
+            // var json = res.json(results);
+            // res.send(json);
+        }
+    ))
+});
+
 app.get('/status', (req, res) => res.send('Working!'));
 
-// Port 8080 for Google App Engine
+
 app.set('port', process.env.PORT || 3000);
 app.listen(3000);
