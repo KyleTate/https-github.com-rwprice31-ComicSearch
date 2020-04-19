@@ -2,13 +2,40 @@ import React, {Component} from "react";
 import {BrowserRouter} from "react-router-dom";
 import Route from "react-router-dom/Route";
 import MarvelLogo from './Marvelcomics.png';
+import DCLogo from './DCLogo.png';
 import CBSText from './cbstext.png';
 
 class nonLandingPages extends Component {
 
+    // renderPage() {
+    //     if (whichPublisher == 'Marvel') {
+    //         return 'MarvelLogo'
+    //     }
+    //     else {
+    //         return 'DCLogo'
+    //     }
+    // }
+
+    whichPublisher
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            Publisher: this.props.location.state.Publisher,
+            list: []
+        }
+
+        if (this.state.Publisher == 'Marvel') {
+            this.whichPublisher = MarvelLogo;
+        }
+        else {
+            this.whichPublisher = DCLogo;
+        }
+    }
+
     render() {
 
-        const Marvel = {
+        const Logo = {
             marginTop: '40px',
             width: '220px',
             height: '175px',
@@ -32,13 +59,16 @@ class nonLandingPages extends Component {
             padding: 0,
             // alignItems: 'left',
         };
+        console.log(this.props.location.state.Publisher)
+        console.log(this.whichPublisher)
 
         return (
+
             <div>
                 <input id="Search-Bar" type="text" placeholder="Search by hero.." />
                 <button id="Search-Submit" type="submit">Submit</button>
 
-            <img style={Marvel} src  = {MarvelLogo} alt={"Marvel Universe"}/>
+            <img style={Logo} src = {this.whichPublisher} alt={"Comic Logo"}/>
 
             <img style={CBSStyle} src = {CBSText} alt={"comic book search"}/>
 

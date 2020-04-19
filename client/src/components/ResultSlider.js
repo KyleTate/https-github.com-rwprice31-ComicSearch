@@ -16,6 +16,8 @@ charName;
     constructor(props) {
         super(props);
         this.state = {
+            list: this.props.List,
+            Character: this.props.Character,
             items: [
                 {
                     id: 0,
@@ -65,6 +67,13 @@ charName;
 
 
     render() {
+        // console.log(this.state.List);
+        console.log(this.props.List);
+        console.log(this.state.list);
+        // var object = JSON.parse(this.props.List);
+        // console.log(object);
+        console.log(this.state.Character);
+
         const settings = {
             dots: false,
             infinite: false,
@@ -101,14 +110,14 @@ charName;
         };
         return (
             <div>
-                <h2 id="Quick-Fix">Heros </h2>
+                <h2 id="Quick-Fix">Series Covers</h2>
                 <Slider className="Result-Slider" {...settings}>
 
                     <div >
                         <button onClick={this.handleClick} to="/Results"> <img className="Hero-Images"  src = {ser1} /> </button>
                     </div>
                     <div>
-                        <button onClick={this.handleInput} to="/Results">  <img className="Hero-Images"  src = {ser2} /> </button>
+                        <button onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {ser2} /> </button>
                     </div>
                     <div>
                         <button onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {ser3} /> </button>

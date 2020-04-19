@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import Slider from "react-slick";
 import GetInput from "./GetInput";
 import hulk from './hulk.png';
@@ -31,13 +31,11 @@ import HeroProfile from "./HeroProfile";
 class SimpleSlider extends Component {
 
 
-
-
-
-
     constructor(props) {
         super(props);
         this.state = {
+            Publisher: this.props.location.state.Publisher,
+            Character: "",
             items: [
                 {
                     id: 0,
@@ -97,45 +95,44 @@ class SimpleSlider extends Component {
     }
 
 
-
     // Method for grabbing id and hero name when hero image btn is selected, having an issue with selcted property being undefined
     // makeHero;
-     heroName;
+    heroName;
 
 
 
-    handleClick = (id) => {
-        let items = [...this.state.items];
-
-        console.log(this.props)
-        const hero = items[id];
-
-        // items["id"].selected = this.heroName;
-
-
-        items.forEach (item => {
-            if(item.id !== id){
-                item.selected = false;
-            }
-        });
-
-
-        this.setState({
-            items
-        });
+    handleClick = (e) => {
+        console.log(e)
+        // let items = [...this.state.items];
+        //
+        // console.log(this.props)
+        // const hero = items[id];
+        //
+        // // items["id"].selected = this.heroName;
+        //
+        //
+        // items.forEach(item => {
+        //     if (item.id !== id) {
+        //         item.selected = false;
+        //     }
+        // });
+        //
+        //
+        // this.setState({
+        //     items
+        // });
 
     }
 
     makeHero = (items) => {
-        return items.map(item =>{
-            return <GetInput Item = {item} onClick={(e => this.handleClick(item.id, e))} key={item.id} />
+        return items.map(item => {
+            return <GetInput Item={item} onClick={(e => this.handleClick(item.id, e))} key={item.id}/>
         })
     }
 
 
-
-
     render() {
+        console.log(this.state.Publisher);
         // {this.state.handleClick()}
         // let { handleClick } = this.props;
         const settings = {
@@ -181,37 +178,73 @@ class SimpleSlider extends Component {
                 <Slider className="Slider" {...settings}>
 
                     <div>
-
-
-                        <Link onClick={this.handleClick} to="/Results"> <img className="Hero-Images"  src = {spiderMan} /> </Link>
+                        <Link to={{
+                            pathname: "/Results",
+                            state: {Character: 'Spider-Man', Publisher: this.state.Publisher}
+                        }}> <img className="Hero-Images" src={spiderMan}/> </Link>
                     </div>
                     <div>
-                        <Link  onClick={this.handleClick} to="/Results" value="hulk"> <img className="Hero-Images"  src = {hulk} /> </Link>
+                        <Link to={{
+                            pathname: "/Results",
+                            state: {Character: 'Hulk', Publisher: this.state.Publisher}
+                        }}><img className="Hero-Images"
+                                src={hulk}/> </Link>
                     </div>
                     <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {CptnAmr} /> </Link>
+                        <Link to="/Results" to={{
+                            pathname: "/Results",
+                            state: {Character: 'Captain America', Publisher: this.state.Publisher}
+                        }}><img
+                            className="Hero-Images" src={CptnAmr}/> </Link>
                     </div>
                     <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {deadPool} /> </Link>
-                    </div>
-                    <div >
-                        <Link onClick={this.handleClick} to="/Results"> <img className="Hero-Images"  src = {blackPanther} /> </Link>
-                    </div>
-                    <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {wolverine} /> </Link>
+                        <Link to={{
+                            pathname: "/Results",
+                            state: {Character: 'Deadpool', Publisher: this.state.Publisher}
+                        }}> <img className="Hero-Images"
+                                 src={deadPool}/> </Link>
                     </div>
                     <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {punisher} /> </Link>
+                        <Link to="/Results" to={{
+                            pathname: "/Results",
+                            state: {Character: 'Black Panther', Publisher: this.state.Publisher}
+                        }}> <img
+                            className="Hero-Images" src={blackPanther}/> </Link>
                     </div>
                     <div>
-
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {ironMan} /> </Link>
+                        <Link to={{
+                            pathname: "/Results",
+                            state: {Character: 'Wolverine', Publisher: this.state.Publisher}
+                        }}> <img className="Hero-Images"
+                                 src={wolverine}/> </Link>
                     </div>
                     <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {lukeCage} /> </Link>
+                        <Link to={{
+                            pathname: "/Results",
+                            state: {Character: 'Punisher', Publisher: this.state.Publisher}
+                        }}> <img className="Hero-Images"
+                                 src={punisher}/> </Link>
                     </div>
                     <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {silverSurfer} /> </Link>
+                        <Link to={{
+                            pathname: "/Results",
+                            state: {Character: 'Iron Man', Publisher: this.state.Publisher}
+                        }}> <img className="Hero-Images"
+                                 src={ironMan}/> </Link>
+                    </div>
+                    <div>
+                        <Link to={{
+                            pathname: "/Results",
+                            state: {Character: 'Luke Cage', Publisher: this.state.Publisher}
+                        }}> <img className="Hero-Images"
+                                 src={lukeCage}/> </Link>
+                    </div>
+                    <div>
+                        <Link to={{
+                            pathname: "/Results",
+                            state: {Character: 'Silver Surfer', Publisher: this.state.Publisher}
+                        }}> <img
+                            className="Hero-Images" src={silverSurfer}/> </Link>
                     </div>
 
                 </Slider>

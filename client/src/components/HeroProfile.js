@@ -17,7 +17,7 @@ import SimpleSlider from "./SimpleSlider";
 export default class HeroProfile extends Component {
 
 
-    characterName = "Iron Man";
+    characterName = this.props.Character;
 
 
 
@@ -27,7 +27,6 @@ export default class HeroProfile extends Component {
         // function f(props) {
         //     {props.items.Title}
         // }
-
 
 
         return (
