@@ -79,13 +79,14 @@ connection.connect(function(err) {
 
 app.route('/test')
     .get(function(req, res, next) {
-        connection.query(
+        (connection.query(
             "SELECT * FROM `gcd_series` LIMIT 3",
             function(error, results, fields) {
                 if (error) throw error;
-                res.json(results);
+                var json = res.json(results);
+                res.send(json);
             }
-        );
+        ))
     });
 
 app.get('/status', (req, res) => res.send('Working!'));

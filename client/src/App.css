@@ -145,15 +145,11 @@
   }
 }
 
-
-
-
-
 /*results page*/
 .Result-Slider{
   transform: scale(0.65);
-  position: relative;
-  top: -835px;
+  position: absolute;
+  top: 35px;
   right: -250px;
   border-style: groove;
   padding-left: 10px;
@@ -163,41 +159,40 @@
 }
 
 #Result-Image-Grid{
-  transform: scale(0.33);
+  transform: scale(0.40);
   position: absolute;
-  top: 0px;
-  left: -4px;
+  top: 80px;
+  left: 10px;
   /*top: -2500px;*/
   /*right: 3px;*/
   border-style: groove;
-
 }
 
 #Publisher-Profile{
   position: absolute;
   top: 0px;
-  right: 1115px;
+  right: 1355px;
   transform: scale(0.45);
 }
 
 #Comic-Search-Text-Profile{
   position: absolute;
   top: -50px;
-  right: 920px;
+  right: 1150px;
   transform: scale(0.35);
 }
 
 #Hero-Profile-Picture{
   position: absolute;
-  top: 0px;
-  right: 940px;
+  top: 30px;
+  right: 1180px;
   transform: scale(0.4);
 }
 
 .Result-Stories{
   position: absolute;
-  top: 350px;
-  right: 35px;
+  top: 400px;
+  right: 80px;
   height:340px;
   width:450px;
   overflow-y:scroll;
