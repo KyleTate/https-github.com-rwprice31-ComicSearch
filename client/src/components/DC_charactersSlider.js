@@ -13,6 +13,16 @@ import greenArrow from './greenarrow.jpg';
 import theFlash from './flash.jpg';
 
 import {Link} from "react-router-dom";
+import spiderMan from "./spiderman.png";
+import hulk from "./hulk.png";
+import CptnAmr from "./CaptianAmerica.png";
+import deadPool from "./deadpool.jpg";
+import blackPanther from "./blackpanther.jpg";
+import wolverine from "./wolverine.jpg";
+import punisher from "./punisher.jpg";
+import ironMan from "./IronMan.png";
+import lukeCage from "./lukecage.jpg";
+import silverSurfer from "./silversurfer.jpg";
 
 export default class SimpleSlider extends Component {
 
@@ -76,6 +86,10 @@ export default class SimpleSlider extends Component {
         }
     }
 
+    handleClick = (e) => {
+        console.log(e)
+    }
+
     // Method for grabbing id and hero name when hero image btn is selected, having an issue with selcted property being undefined
 
     // handleClick = (id) => {
@@ -106,6 +120,8 @@ export default class SimpleSlider extends Component {
 
 
     render() {
+        console.log(this.state.Publisher);
+
         const settings = {
             dots: true,
             infinite: true,
@@ -140,7 +156,92 @@ export default class SimpleSlider extends Component {
                 }
             ]
         };
+
         return (
+            <div>
+
+                <h2 id="Quick-Fix">Hero </h2>
+                <Slider className="Slider" {...settings}>
+
+                    <div>
+                        <Link to={{
+                            pathname: "/Results",
+                            state: {Character: 'Joker', Publisher: this.state.Publisher}
+                        }}> <img className="Hero-Images" src={joker}/> </Link>
+                    </div>
+                    <div>
+                        <Link to={{
+                            pathname: "/Results",
+                            state: {Character: 'Super Man', Publisher: this.state.Publisher}
+                        }}><img className="Hero-Images"
+                                src={superMan}/> </Link>
+                    </div>
+                    <div>
+                        <Link to="/Results" to={{
+                            pathname: "/Results",
+                            state: {Character: 'Bat Man', Publisher: this.state.Publisher}
+                        }}><img
+                            className="Hero-Images" src={batMan}/> </Link>
+                    </div>
+                    <div>
+                        <Link to={{
+                            pathname: "/Results",
+                            state: {Character: 'Wonder Woman', Publisher: this.state.Publisher}
+                        }}> <img className="Hero-Images"
+                                 src={wonderWoman}/> </Link>
+                    </div>
+                    <div>
+                        <Link to="/Results" to={{
+                            pathname: "/Results",
+                            state: {Character: 'Green Lantern', Publisher: this.state.Publisher}
+                        }}> <img
+                            className="Hero-Images" src={greenLantern}/> </Link>
+                    </div>
+                    <div>
+                        <Link to={{
+                            pathname: "/Results",
+                            state: {Character: 'John C', Publisher: this.state.Publisher}
+                        }}> <img className="Hero-Images"
+                                 src={johnC}/> </Link>
+                    </div>
+                    <div>
+                        <Link to={{
+                            pathname: "/Results",
+                            state: {Character: 'Green Arrow', Publisher: this.state.Publisher}
+                        }}> <img className="Hero-Images"
+                                 src={greenArrow}/> </Link>
+                    </div>
+                    <div>
+                        <Link to={{
+                            pathname: "/Results",
+                            state: {Character: 'Aqua Man', Publisher: this.state.Publisher}
+                        }}> <img className="Hero-Images"
+                                 src={aquaMan}/> </Link>
+                    </div>
+                    <div>
+                        <Link to={{
+                            pathname: "/Results",
+                            state: {Character: 'Bane', Publisher: this.state.Publisher}
+                        }}> <img className="Hero-Images"
+                                src={bane}/> </Link>
+                    </div>
+                    <div>
+                        <Link to={{
+                            pathname: "/Results",
+                            state: {Character: 'The Flash', Publisher: this.state.Publisher}
+                        }}> <img
+                            className="Hero-Images"
+                                src={theFlash}/> </Link>
+                    </div>
+
+                </Slider>
+
+                {/*{this.makeHero(this.state.items)}*/}
+
+
+            </div>
+        );
+        /*return (
             <div>
                 <h2 id="Quick-Fix">Heros </h2>
                 <Slider  className="Slider" {...settings}>
@@ -178,6 +279,6 @@ export default class SimpleSlider extends Component {
 
                 </Slider>
             </div>
-        );
+        );*/
     }
 }
