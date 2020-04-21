@@ -17,7 +17,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"node server.js\" \"cd client && npm start\""
+    "start": "concurrently \"cd comicsearch && node server.js\" \"cd client && npm start\""
   },
   "repository": {
     "type": "git",
