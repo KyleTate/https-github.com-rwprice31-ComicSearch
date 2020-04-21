@@ -31,6 +31,8 @@ export default class SimpleSlider extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            Publisher: this.props.location.state.Publisher,
+            Character: "",
             items: [
                 {
                     id: 0,
