@@ -10,8 +10,10 @@ import {Link} from "react-router-dom";
 export default class ResultSlider extends Component {
 
 
-charName;
 
+charName;
+image;
+issue_cover_id;
 
     constructor(props) {
         super(props);
@@ -68,6 +70,17 @@ charName;
 
     render() {
         // console.log(this.state.List);
+
+        // const imagesElements = this.state.list.map( e => {
+        //     return (
+        //         <h1> HI </h1>
+        //         // {/*<button onClick={this.handleClick} to="/Results"><img className="Hero-Images"*/}
+        //         // {/*                                                      src={ser1}/>*/}
+        //         // {/*</button>*/}
+        //         // <img src={`${e.id}.jpg`} />
+        //     )
+        // });
+
         console.log(this.props.List);
         console.log(this.state.list);
         // var object = JSON.parse(this.props.List);
@@ -108,26 +121,22 @@ charName;
                 }
             ]
         };
+
         return (
             <div>
                 <h2 id="Quick-Fix">Series Covers</h2>
                 <Slider className="Result-Slider" {...settings}>
-
-                    <div >
-                        <button onClick={this.handleClick} to="/Results"> <img className="Hero-Images"  src = {ser1} /> </button>
-                    </div>
-                    <div>
-                        <button onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {ser2} /> </button>
-                    </div>
-                    <div>
-                        <button onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {ser3} /> </button>
-                    </div>
-                    <div>
-                        <button onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {ser4} /> </button>
-                    </div>
-                    <div>
-                        <button onClick={this.handleClick} to="/Results"> <img className="Hero-Images"  src = {ser5} /> </button>
-                    </div>
+                    {this.props.List.map(s => {
+                        this.issue_cover_id = s.id;
+                        this.image = require('./issue_covers/' + this.issue_cover_id + '.jpg');
+                        return (
+                        <div>
+                            <button>
+                        <img className="Hero-Images" src={this.image}/>
+                            </button>
+                        </div>
+                        )
+                    })}
                 </Slider>
             </div>
         );
