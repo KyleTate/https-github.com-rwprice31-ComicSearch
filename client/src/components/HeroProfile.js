@@ -56,7 +56,7 @@ export default class HeroProfile extends Component {
                 break
             case 'Super Man' : this.picture = "superman"; this.logo = dcLogo;
                 break
-            case 'Green Lantern' : this.picture = "greenlntern"; this.logo = dcLogo;
+            case 'Green Lantern' : this.picture = "greenlantern"; this.logo = dcLogo;
                 break
             case 'The Flash' : this.picture = "flash"; this.logo = dcLogo;
                 break

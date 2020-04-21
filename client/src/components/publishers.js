@@ -77,7 +77,7 @@ class Publishers extends Component {
 
                     <div className="Publisher-logo">
                         <Link to={{
-                            pathname: "/DC",
+                            pathname: "/Marvel",
                             state: {Publisher: 'DC'}
                         }}>
                             <button className="Publisher-btn " style={DCStyle}><img src={DCLogo} alt={"DC Universe"}
