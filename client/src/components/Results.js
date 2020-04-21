@@ -44,7 +44,7 @@ class Results extends Component {
            <h1 className="App-body">Select a Series</h1>
                 <ResultSlider List={this.state.list} Character={this.state.Character}/>
                 <HeroProfile Character={this.state.Character}/>
-                <ResultImageGrid Character={this.state.Character}/>
+                <ResultImageGrid List={this.state.list} Character={this.state.Character}/>
                 <h1>{this.state.Character}</h1>
 
 
