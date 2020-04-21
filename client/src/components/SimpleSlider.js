@@ -9,7 +9,7 @@ import lukeCage from './lukecage.jpg';
 import silverSurfer from './silversurfer.jpg';
 import ironMan from './IronMan.png';
 import blackPanther from './blackpanther.jpg';
-import spiderMan from './spiderman.png';
+import spiderMan from './spiderMan.png';
 import wolverine from './wolverine.jpg';
 import {Link} from "react-router-dom";
 import HeroProfile from "./HeroProfile";

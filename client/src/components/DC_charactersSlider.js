@@ -13,7 +13,7 @@ import greenArrow from './greenarrow.jpg';
 import theFlash from './flash.jpg';
 
 import {Link} from "react-router-dom";
-import spiderMan from "./spiderman.png";
+import spiderMan from "./spiderMan.png";
 import hulk from "./hulk.png";
 import CptnAmr from "./CaptianAmerica.png";
 import deadPool from "./deadpool.jpg";
