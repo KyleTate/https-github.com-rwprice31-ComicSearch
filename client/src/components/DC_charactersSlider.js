@@ -1,28 +1,28 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 
-import joker from './joker.jpg';
-import superMan from './superman.jpg';
+import joker from './joker.png';
+import superMan from './superman.png';
 import batMan from './batman.jpg'
-import wonderWoman from './wonderwoman.jpg';
+import wonderWoman from './wonderwoman.png';
 import johnC from './johnconstantine.jpg';
-import aquaMan from './aquaman.jpg';
-import greenLantern from './greenlantern.jpg';
+import aquaMan from './aquaman.png';
+import greenLantern from './greenlantern.png';
 import bane from './bane.jpg';
-import greenArrow from './greenarrow.jpg';
+import greenArrow from './greenarrow.png';
 import theFlash from './flash.jpg';
 
 import {Link} from "react-router-dom";
 import spiderMan from "./spiderMan.png";
 import hulk from "./hulk.png";
 import CptnAmr from "./CaptianAmerica.png";
-import deadPool from "./deadpool.jpg";
+import deadPool from "./deadpool.png";
 import blackPanther from "./blackpanther.jpg";
-import wolverine from "./wolverine.jpg";
+import wolverine from "./wolverine.png";
 import punisher from "./punisher.jpg";
 import ironMan from "./IronMan.png";
-import lukeCage from "./lukecage.jpg";
-import silverSurfer from "./silversurfer.jpg";
+import lukeCage from "./lukecage.png";
+import silverSurfer from "./silversurfer.png";
 
 export default class SimpleSlider extends Component {
 

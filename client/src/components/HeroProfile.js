@@ -5,7 +5,7 @@ import hulk from './hulk.png';
 import thor from './thor.png';
 import SpiderMan from './spiderMan.png';
 import ironMan from './ironmanprofile.png';
-
+import dcLogo from './DCLogo.png'
 import marvelLogo from './Marvelcomics.png';
 
 import comicSearch from './cbstext.png';
@@ -19,6 +19,7 @@ export default class HeroProfile extends Component {
 
     characterName = this.props.Character;
     picture = "";
+    logo;
 
 
 
@@ -27,28 +28,48 @@ export default class HeroProfile extends Component {
         //     {props.items.Title}
         // }
 
+
         switch (this.characterName){
-            case 'Hulk' && this.props.pu: this.picture = "hulk";
-            case 'Spider-Man' : this.picture = "spiderMan";
-            case 'Black Panther' : this.picture = "BlackPanther";
-            case 'Iron Man' : this.picture = "IronMan";
-            case 'Captain America' : this.picture = "Captain America";
-            case 'Deadpool' : this.picture = "deadpool";
-            case 'Wolverine' : this.picture = "wolverine";
-            case 'Punisher' : this.picture = "punisher";
-            case 'Silver Surfer' : this.picture = "silversurfer";
-            case 'Luke Cage' : this.picture = "lukecage";
-            case 'Joker': this.picture = "joker";
-            case 'Super Man' : this.picture = "superman";
-            case 'Bat Man' : this.picture = "blacknight";
-            case 'Wonder Woman' : this.picture = "wonderwoman";
-            case 'Green Lantern' : this.picture = "greenarrow";
-            case 'John C' : this.picture = "johnc";
-            case 'Green Arrow' : this.picture = "greenarrow";
-            case 'Aqua Man' : this.picture = "aquaman";
-            case 'The Flash' : this.picture = "flash";
-            case 'Bane' : this.picture = "bane";
-            default : this.picture = "IronMan";
+            case 'Hulk': this.picture = "hulk"; this.logo = marvelLogo;
+            break
+            case 'Spider-Man' : this.picture = "spiderMan"; this.logo = marvelLogo;
+                break
+            case 'Black Panther' : this.picture = "BlackPanther"; this.logo = marvelLogo;
+                break
+            case 'Iron Man' : this.picture = "IronMan"; this.logo = marvelLogo;
+                break
+            case 'Captain America' : this.picture = "CaptianAmerica"; this.logo = marvelLogo;
+                break
+            case 'Deadpool' : this.picture = "deadpool"; this.logo = marvelLogo;
+                break
+            case 'Wolverine' : this.picture = "wolverine"; this.logo = marvelLogo;
+                break
+            case 'Punisher' : this.picture = "punisher"; this.logo = marvelLogo;
+                break
+            case 'Silver Surfer' : this.picture = "silversurfer"; this.logo = marvelLogo;
+                break
+            case 'Luke Cage' : this.picture = "lukecage"; this.logo = marvelLogo;
+                break
+            case 'Green Arrow': this.picture = "greenarrow"; this.logo = dcLogo;
+                break
+            case 'Wonder Woman' : this.picture = "wonderwoman"; this.logo = dcLogo;
+                break
+            case 'Super Man' : this.picture = "superman"; this.logo = dcLogo;
+                break
+            case 'Green Lantern' : this.picture = "greenlntern"; this.logo = dcLogo;
+                break
+            case 'The Flash' : this.picture = "flash"; this.logo = dcLogo;
+                break
+            case 'Bane' : this.picture = "bane"; this.logo = dcLogo;
+                break
+            case 'Aqua Man' : this.picture = "aquaman"; this.logo = dcLogo;
+                break
+            case 'John C' : this.picture = "johnconstantine"; this.logo = dcLogo;
+                break
+            case 'Bat Man' : this.picture = "blackknight"; this.logo = dcLogo;
+                break
+            case 'Joker' : this.picture = "joker"; this.logo = dcLogo;
+                break
         }
 
 
@@ -57,7 +78,7 @@ export default class HeroProfile extends Component {
 
 
                 <img id="Hero-Profile-Picture"  src = {require('./'+this.picture+'.png')} />
-                <img id="Publisher-Profile"  src = {marvelLogo} />
+                <img id="Publisher-Profile"  src = {this.logo} />
                 <img id="Comic-Search-Text-Profile"  src = {comicSearch} />
                 <h2 className="Result-Character-Name">{this.characterName}</h2>
 
