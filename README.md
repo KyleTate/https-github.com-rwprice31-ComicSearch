@@ -1,6 +1,12 @@
 # ComicSearch
 
-The purpose of this website is to help introduce new readers to comics and to be an easy way to find series of different characters
+The purpose of this website is to help introduce new readers to comics and to be an easy way to find series of different characters.  First choose a Publisher such as Marvel, this will bring up a page with a list of characters like Thor and Iron Man.  After choosing a character you will be directed to a page for that character listing searies/ story arcs.  When choosing a series a list of issues will appear that are a part of that story arc.  If you select an issue a description will appear listing 
+- Title (of Story)
+- Features (Main Characters involved)
+- Sequence Number (in what order within the Issue is the Story)
+- Page Count
+- Characters (All Characters involved)
+- Synopsis
 
 Cover thumbnails are used for identification purposes only. All rights to cover images reserved by the respective copyright holders.
 
