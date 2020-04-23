@@ -180,8 +180,10 @@ app.get('/issue_stories/:issue_id', function (req, res, next) {
     const issueId = req.params.issue_id;
 
     (connection.query(
-        "select title, feature, sequence_number, page_count, characters, synopsis, first_line from gcd_story\n" +
-        "where issue_id = '" + issueId + "' and type_id = 19;",
+        "select id, title, feature, sequence_number, page_count, characters, synopsis, first_line from gcd_story\n" +
+        "where issue_id = '" + issueId + "\n +'" +
+        " and type_id = 19\n" +
+        ";",
         function (error, results, fields) {
             if (error) throw error;
             res.send(results);

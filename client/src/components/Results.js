@@ -10,14 +10,15 @@ class Results extends Component {
 
     constructor(props) {
         super(props);
-
         this.state = {
             Publisher: this.props.location.state.Publisher,
             Character: this.props.location.state.Character,
-            list: []
+            list: [],
+            selectedIssue: ""
         }
-        console.log(props)
-        console.log(props.location.state.Character)
+        // console.log(props)
+        // console.log(props.location.state.Character)
+        this.onChange = this.onChange.bind(this);
     }
     //
     // Fetch the list on first mount
@@ -32,10 +33,17 @@ class Results extends Component {
             .then(list => this.setState({list}))
     }
 
+    onChange(newIssueId) {
+        this.setState({ selectedIssue: newIssueId });
+    }
+
+
+
     render() {
 
-        console.log(this.state.list);
+        // console.log(this.state.list);
         // console.log(this.props.Character);
+        console.log("Changed!: " + this.state.selectedIssue)
         return (
             <div>
                 {/*<ul>*/}
@@ -43,8 +51,8 @@ class Results extends Component {
                 {/*</ul>*/}
            <h1 className="App-body">Select a Series</h1>
                 <ResultSlider List={this.state.list} Character={this.state.Character}/>
-                <HeroProfile Character={this.state.Character}/>
-                <ResultImageGrid List={this.state.list} Character={this.state.Character}/>
+                <HeroProfile Character={this.state.Character} SelectedIssue={this.state.selectedIssue}/>
+                <ResultImageGrid List={this.state.list} Character={this.state.Character} changeIssue={this.onChange}/>
                 <h1>{this.state.Character}</h1>
 
 

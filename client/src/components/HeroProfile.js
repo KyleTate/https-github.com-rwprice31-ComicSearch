@@ -16,17 +16,55 @@ import SimpleSlider from "./SimpleSlider";
 
 export default class HeroProfile extends Component {
 
-
     characterName = this.props.Character;
     picture = "";
     logo;
 
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            selectedIssue: this.props.SelectedIssue,
+            list: []
+        }
+    }
+
+    componentDidUpdate() {
+        // this.setState({selectedIssue: this.props.SelectedIssue})
+        console.log(this.state.selectedIssue)
+        this.getData();
+        // console.log(this.state.list)
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log("From nextProps: " + nextProps.SelectedIssue + " From nextState: " + nextState.selectedIssue)
+        console.log("From props: " + this.props.SelectedIssue + " From state: " + this.state.selectedIssue)
+        console.log(nextProps.SelectedIssue != this.state.selectedIssue)
+        return nextProps.SelectedIssue != this.state.selectedIssue
+        //return false
+    }
+
+    // Retrieves the list of items from the Express app
+    getData = () => {
+        fetch('/issue_stories/' + this.state.selectedIssue)
+            .then(res => res.json())
+            .then(list => this.setState({list}))
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({selectedIssue: nextProps.SelectedIssue})
+        // this.getData()
+    }
 
     render() {
         // function f(props) {
         //     {props.items.Title}
         // }
+        console.log(this.props)
+        console.log(this.state.selectedIssue)
+        console.log(this.props.SelectedIssue)
+        // this.getData()
+        console.log(this.state.list)
 
 
         switch (this.characterName){
@@ -76,7 +114,6 @@ export default class HeroProfile extends Component {
         return (
             <div>
 
-
                 <img id="Hero-Profile-Picture"  src = {require('./'+this.picture+'.png')} />
                 <img id="Publisher-Profile"  src = {this.logo} />
                 <img id="Comic-Search-Text-Profile"  src = {comicSearch} />
@@ -84,119 +121,139 @@ export default class HeroProfile extends Component {
 
                 <ul className="Result-Stories">
 
-                    <div >
-                        {/*<li>    <GetInput /></li>*/}
-                        <li>
-                            <div className="dropdown">
-                                <p className="Header-Dropdown">Story Num1: </p>
-                                <div className="dropdown-content">
-                                    <p>Story content: </p>
-                                    <p>Story content: </p>
-                                    <p>Story content: </p>
-                                    <p>Story content: </p>
-                                    <p>Story content: </p>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div className="dropdown">
-                                <p className="Header-Dropdown">Story Num2: </p>
-                                <div className="dropdown-content">
-                                    <p>Story content: </p>
-                                    <p>Story content: </p>
-                                    <p>jly content: </p>
-                                    <p>gk;content: </p>
-                                    <p>Stgjltent: </p>
-                                    <p>Story content: </p>
-                                    <p>Stgjnt: </p>
-                                    <p>Story content: </p>
-                                    <p>Stosfbsfent: </p>
-                                    <p>Story content: </p>
-                                    <p>Stadgtent: </p>
-                                    <p>Sfkyontent: </p>
-                                    <p>gjlent: </p>
-                                    <p>Story content: </p>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div className="dropdown">
-                                <p className="Header-Dropdown">Story Num2: </p>
-                                <div className="dropdown-content">
-                                    <p>Story content: </p>
-                                    <p>Story content: </p>
-                                    <p>Story content: </p>
-                                    <p>Story content: </p>
-                                    <p>Story content: </p>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div className="dropdown">
-                                <p className="Header-Dropdown">Story Num2: </p>
-                                <div className="dropdown-content">
-                                    <p>Story content: </p>
-                                    <p>Story content: </p>
-                                    <p>Story content: </p>
-                                    <p>Story content: </p>
-                                    <p>Story content: </p>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div className="dropdown">
-                                <p className="Header-Dropdown">Story Num2: </p>
-                                <div className="dropdown-content">
-                                    <p>Story content: </p>
-                                    <p>Story content: </p>
-                                    <p>jly content: </p>
-                                    <p>gk;content: </p>
-                                    <p>Stgjltent: </p>
-                                    <p>Story content: </p>
-                                    <p>Stgjnt: </p>
-                                    <p>Story content: </p>
-                                    <p>Stosfbsfent: </p>
-                                    <p>Story content: </p>
-                                    <p>Stadgtent: </p>
-                                    <p>Sfkyontent: </p>
-                                    <p>gjlent: </p>
-                                    <p>Story content: </p>
-
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div className="dropdown">
-                                <p className="Header-Dropdown">Story Num2: </p>
-                                <div className="dropdown-content">
-                                    <p>Story content: </p>
-                                    <p>Story content: </p>
-                                    <p>Story content: </p>
-                                    <p>Story content: </p>
-                                    <p>Story content: </p>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div className="dropdown">
-                                <p className="Header-Dropdown">Story Num2: </p>
-                                <div className="dropdown-content">
-                                    <p>Story content: </p>
-                                    <p>Story content: </p>
-                                    <p>Story content: </p>
-                                    <p>Story content: </p>
-                                    <p>Story content: </p>
-                                </div>
-                            </div>
-                        </li>
+                    {this.state.list.map(s => (<li><div className="dropdown">
+                        <p className="Header-Dropdown">Story # {s.sequence_number}</p>
+                        <div className="dropdown-content">
+                            <li>
+                                <p>{"Story Title: " + s.title}</p>
+                                <p>{"Story's main featured Character(s): " + s.feature}</p>
+                                <p>{"Story sequence #: " + s.sequence_number}</p>
+                                <p>{"Story page count: " + s.page_count}</p>
+                                <p>{"All Characters within this Story : " + s.characters}</p>
+                                <p>{"Story synopsis/summary : " + s.synopsis}</p>
+                                <p>{"First line given in Story : " + s.first_line}</p>
+                            </li>
+                        </div>
                     </div>
+                    </li>))}
                 </ul>
+
+
+                {/*<ul className="Result-Stories">*/}
+
+                {/*    /!*<div>*!/*/}
+                {/*        /!*<li>    <GetInput /></li>*!/*/}
+                {/*        <li>*/}
+                {/*            <div className="dropdown">*/}
+                {/*                <p className="Header-Dropdown">Story Num1: </p>*/}
+                {/*                <div className="dropdown-content">*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                </div>*/}
+                {/*            </div>*/}
+                {/*        </li>*/}
+
+                {/*        <li>*/}
+                {/*            <div className="dropdown">*/}
+                {/*                <p className="Header-Dropdown">Story Num2: </p>*/}
+                {/*                <div className="dropdown-content">*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>jly content: </p>*/}
+                {/*                    <p>gk;content: </p>*/}
+                {/*                    <p>Stgjltent: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>Stgjnt: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>Stosfbsfent: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>Stadgtent: </p>*/}
+                {/*                    <p>Sfkyontent: </p>*/}
+                {/*                    <p>gjlent: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                </div>*/}
+                {/*            </div>*/}
+                {/*        </li>*/}
+
+                {/*        <li>*/}
+                {/*            <div className="dropdown">*/}
+                {/*                <p className="Header-Dropdown">Story Num2: </p>*/}
+                {/*                <div className="dropdown-content">*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                </div>*/}
+                {/*            </div>*/}
+                {/*        </li>*/}
+
+                {/*        <li>*/}
+                {/*            <div className="dropdown">*/}
+                {/*                <p className="Header-Dropdown">Story Num2: </p>*/}
+                {/*                <div className="dropdown-content">*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                </div>*/}
+                {/*            </div>*/}
+                {/*        </li>*/}
+
+                {/*        <li>*/}
+                {/*            <div className="dropdown">*/}
+                {/*                <p className="Header-Dropdown">Story Num2: </p>*/}
+                {/*                <div className="dropdown-content">*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>jly content: </p>*/}
+                {/*                    <p>gk;content: </p>*/}
+                {/*                    <p>Stgjltent: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>Stgjnt: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>Stosfbsfent: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>Stadgtent: </p>*/}
+                {/*                    <p>Sfkyontent: </p>*/}
+                {/*                    <p>gjlent: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+
+                {/*                </div>*/}
+                {/*            </div>*/}
+                {/*        </li>*/}
+
+                {/*        <li>*/}
+                {/*            <div className="dropdown">*/}
+                {/*                <p className="Header-Dropdown">Story Num2: </p>*/}
+                {/*                <div className="dropdown-content">*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                </div>*/}
+                {/*            </div>*/}
+                {/*        </li>*/}
+
+                {/*        <li>*/}
+                {/*            <div className="dropdown">*/}
+                {/*                <p className="Header-Dropdown">Story Num2: </p>*/}
+                {/*                <div className="dropdown-content">*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                    <p>Story content: </p>*/}
+                {/*                </div>*/}
+                {/*            </div>*/}
+                {/*        </li>*/}
+                {/*    /!*</div>*!/*/}
+                {/*</ul>*/}
 
 
             </div>

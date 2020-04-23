@@ -81,11 +81,11 @@ issue_cover_id;
         //     )
         // });
 
-        console.log(this.props.List);
-        console.log(this.state.list);
+        // console.log(this.props.List);
+        // console.log(this.state.list);
         // var object = JSON.parse(this.props.List);
         // console.log(object);
-        console.log(this.state.Character);
+        // console.log(this.state.Character);
 
         const settings = {
             dots: false,

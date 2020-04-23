@@ -7,10 +7,13 @@ var IMAGES = []
 export default class imagegrid extends Component {
     constructor(props) {
         super(props);
+        this.passIssueId = this.passIssueId.bind(this);
     }
 
     passIssueId(index) {
-        console.log(IMAGES[index].tags[0].issue_id)
+        var id = IMAGES[index].tags[0].issue_id;
+        console.log(id);
+        this.props.changeIssue(id);
     }
 
     render() {
@@ -33,8 +36,9 @@ export default class imagegrid extends Component {
             }
         )
     })
-        console.log(IMAGES.length)
-        console.log(IMAGES)
+        // console.log(IMAGES.length)
+        // console.log(IMAGES)
+        // console.log(this.props)
         return (
             <div id="Result-Image-Grid" style = {{
                 display: "box",
