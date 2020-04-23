@@ -130,7 +130,7 @@ issue_cover_id;
                         this.issue_cover_id = s.id;
                         this.image = require('./issue_covers/' + this.issue_cover_id + '.jpg');
                         return (
-                        <div>
+                        <div key={s.id}>
                             <button>
                         <img className="Hero-Images" src={this.image}/>
                             </button>

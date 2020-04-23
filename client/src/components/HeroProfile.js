@@ -29,10 +29,12 @@ export default class HeroProfile extends Component {
         }
     }
 
+
+
     componentDidUpdate() {
         // this.setState({selectedIssue: this.props.SelectedIssue})
         console.log(this.state.selectedIssue)
-        this.getData();
+        // this.getData();
         // console.log(this.state.list)
     }
 
@@ -52,14 +54,20 @@ export default class HeroProfile extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
+        console.log(nextProps.SelectedIssue)
         this.setState({selectedIssue: nextProps.SelectedIssue})
+        console.log(this.state.selectedIssue)
         // this.getData()
+        // fetch('/issue_stories/' + this.props.selectedIssue)
+        //     .then(res => res.json())
+        //     .then(list => this.setState({list}))
     }
 
     render() {
         // function f(props) {
         //     {props.items.Title}
         // }
+        this.getData();
         console.log(this.props)
         console.log(this.state.selectedIssue)
         console.log(this.props.SelectedIssue)
@@ -121,10 +129,10 @@ export default class HeroProfile extends Component {
 
                 <ul className="Result-Stories">
 
-                    {this.state.list.map(s => (<li><div className="dropdown">
+                    {this.state.list.map(s => (<li key={s.id}><div className="dropdown">
                         <p className="Header-Dropdown">Story # {s.sequence_number}</p>
                         <div className="dropdown-content">
-                            <li>
+                            <li key={s.id}>
                                 <p>{"Story Title: " + s.title}</p>
                                 <p>{"Story's main featured Character(s): " + s.feature}</p>
                                 <p>{"Story sequence #: " + s.sequence_number}</p>
