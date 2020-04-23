@@ -53,7 +53,7 @@ class App extends Component {
                 <Route exact path="/Marvel" component={Slider} />
                 {/*<Route exact path="/Marvel" component={Gallery} />*/}
                 <Route exact path="/DC" component={Characters} />
-                <Route exact path="/DC" component={DC_charactersSlider} />
+                <Route exact path="/DC" component={Slider} />
                 {/*<Route exact path="/DC" component={Gallery} />*/}
 
                 <Route exact path="/Results" component={Results} />

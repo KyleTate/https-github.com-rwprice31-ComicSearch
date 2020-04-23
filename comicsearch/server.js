@@ -176,6 +176,19 @@ app.get('/issues/:publisher/:character', function (req, res, next) {
     ))
 });
 
+app.get('/issue_stories/:issue_id', function (req, res, next) {
+    const issueId = req.params.issue_id;
+
+    (connection.query(
+        "select title, feature, sequence_number, page_count, characters, synopsis, first_line from gcd_story\n" +
+        "where issue_id = '" + issueId + "' and type_id = 19;",
+        function (error, results, fields) {
+            if (error) throw error;
+            res.send(results);
+        }
+    ))
+});
+
 app.get('/status', (req, res) => res.send('Working!'));
 
 

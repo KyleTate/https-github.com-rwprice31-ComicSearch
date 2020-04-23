@@ -3,9 +3,9 @@ import Slider from "react-slick";
 
 import joker from './joker.png';
 import superMan from './superman.png';
-import batMan from './batman.jpg'
+import batMan from './batman.png'
 import wonderWoman from './wonderwoman.png';
-import johnC from './johnconstantine.jpg';
+import johnC from './johnconstantine.png';
 import aquaMan from './aquaman.png';
 import greenLantern from './greenlantern.png';
 import bane from './bane.jpg';
@@ -17,9 +17,9 @@ import spiderMan from "./spiderMan.png";
 import hulk from "./hulk.png";
 import CptnAmr from "./CaptianAmerica.png";
 import deadPool from "./deadpool.png";
-import blackPanther from "./blackpanther.jpg";
+import blackPanther from "./blackpanther.png";
 import wolverine from "./wolverine.png";
-import punisher from "./punisher.jpg";
+import punisher from "./punisher.png";
 import ironMan from "./IronMan.png";
 import lukeCage from "./lukecage.png";
 import silverSurfer from "./silversurfer.png";
@@ -174,14 +174,14 @@ export default class SimpleSlider extends Component {
                     <div>
                         <Link to={{
                             pathname: "/Results",
-                            state: {Character: 'Super Man', Publisher: this.state.Publisher}
+                            state: {Character: 'Superman', Publisher: this.state.Publisher}
                         }}><img className="Hero-Images"
                                 src={superMan}/> </Link>
                     </div>
                     <div>
                         <Link to="/Results" to={{
                             pathname: "/Results",
-                            state: {Character: 'Bat Man', Publisher: this.state.Publisher}
+                            state: {Character: 'Batman', Publisher: this.state.Publisher}
                         }}><img
                             className="Hero-Images" src={batMan}/> </Link>
                     </div>

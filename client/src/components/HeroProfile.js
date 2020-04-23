@@ -34,7 +34,7 @@ export default class HeroProfile extends Component {
             break
             case 'Spider-Man' : this.picture = "spiderMan"; this.logo = marvelLogo;
                 break
-            case 'Black Panther' : this.picture = "BlackPanther"; this.logo = marvelLogo;
+            case 'Black Panther' : this.picture = "blackpanther"; this.logo = marvelLogo;
                 break
             case 'Iron Man' : this.picture = "IronMan"; this.logo = marvelLogo;
                 break
@@ -54,7 +54,7 @@ export default class HeroProfile extends Component {
                 break
             case 'Wonder Woman' : this.picture = "wonderwoman"; this.logo = dcLogo;
                 break
-            case 'Super Man' : this.picture = "superman"; this.logo = dcLogo;
+            case 'Superman' : this.picture = "superman"; this.logo = dcLogo;
                 break
             case 'Green Lantern' : this.picture = "greenlantern"; this.logo = dcLogo;
                 break
@@ -62,11 +62,11 @@ export default class HeroProfile extends Component {
                 break
             case 'Bane' : this.picture = "bane"; this.logo = dcLogo;
                 break
-            case 'Aqua Man' : this.picture = "aquaman"; this.logo = dcLogo;
+            case 'Aquaman' : this.picture = "aquaman"; this.logo = dcLogo;
                 break
-            case 'John C' : this.picture = "johnconstantine"; this.logo = dcLogo;
+            case 'John Constantine' : this.picture = "johnconstantine"; this.logo = dcLogo;
                 break
-            case 'Bat Man' : this.picture = "blackknight"; this.logo = dcLogo;
+            case 'Batman' : this.picture = "batman"; this.logo = dcLogo;
                 break
             case 'Joker' : this.picture = "joker"; this.logo = dcLogo;
                 break

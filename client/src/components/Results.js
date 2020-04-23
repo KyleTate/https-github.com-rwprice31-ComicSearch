@@ -38,9 +38,9 @@ class Results extends Component {
         // console.log(this.props.Character);
         return (
             <div>
-                <ul>
-                    {this.state.list.map(s => (<li>{s.id}</li>))}
-                </ul>
+                {/*<ul>*/}
+                {/*    {this.state.list.map(s => (<li>{s.id}</li>))}*/}
+                {/*</ul>*/}
            <h1 className="App-body">Select a Series</h1>
                 <ResultSlider List={this.state.list} Character={this.state.Character}/>
                 <HeroProfile Character={this.state.Character}/>
