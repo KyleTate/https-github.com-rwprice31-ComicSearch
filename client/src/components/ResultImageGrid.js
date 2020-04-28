@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import Gallery from 'react-grid-gallery';
+import HeroProfile from "./HeroProfile";
 
 var IMAGES = []
 
@@ -9,6 +10,8 @@ export default class imagegrid extends Component {
         super(props);
         this.passIssueId = this.passIssueId.bind(this);
     }
+
+
 
     passIssueId(index) {
         var id = IMAGES[index].tags[0].issue_id;

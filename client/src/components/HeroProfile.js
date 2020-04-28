@@ -31,7 +31,7 @@ export default class HeroProfile extends Component {
 
 
 
-    componentDidUpdate() {
+        componentDidUpdate() {
         // this.setState({selectedIssue: this.props.SelectedIssue})
         console.log(this.state.selectedIssue)
         // this.getData();

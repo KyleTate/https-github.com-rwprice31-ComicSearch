@@ -1,8 +1,7 @@
 .page-wrap {
   width: 100%;
   margin: 0 auto;
-  position: relative;
-
+  overflow-x: hidden;
 }
 
 .App-header {
@@ -161,8 +160,8 @@
 .Result-Slider{
   transform: scale(0.67);
   position: relative;
-  top: -890px;
-  right: -212px;
+  top: 50%;
+  right: 0%;
   border-style: groove;
   padding-left: 10px;
   padding-top: 5px;
@@ -203,10 +202,22 @@
 .Result-Grid-Outside{
 
   position: absolute;
-  left: 40px;
-  top: -60px;
+  left: 5%;
+  top: 15%;
 
   /*padding-right: 0px;*/
+}
+
+.Result-Slider{
+  transform: scale(0.67);
+  position: relative;
+  top: -1000px;
+  right: -10%;
+  border-style: groove;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
 }
 
 .Publisher-Profile{
@@ -214,21 +225,21 @@
   top: 0px;
   /*padding-left: 50px;*/
   /*padding-top: -300px;*/
-  right: 1115px;
+  right: 75%;
   transform: scale(0.45);
 }
 
 .Comic-Search-Text-Profile{
   position: absolute;
   top: -50px;
-  right: 920px;
+  right: 65%;
   transform: scale(0.35);
 }
 
 #Hero-Profile-Picture{
   position: absolute;
   top: 0px;
-  right: 940px;
+  right: 65%;
   transform: scale(0.4);
 }
 
@@ -252,8 +263,8 @@
 border-width: 20px;
 
   position: absolute;
-  top: 335px;
-  right: 45px;
+  top: 55%;
+  right: 5%;
   height:340px;
   width: 515px;
   overflow-y:scroll;

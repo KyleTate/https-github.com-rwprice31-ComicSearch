@@ -14,6 +14,7 @@ export default class ResultSlider extends Component {
 charName;
 image;
 issue_cover_id;
+series;
 
     constructor(props) {
         super(props);
