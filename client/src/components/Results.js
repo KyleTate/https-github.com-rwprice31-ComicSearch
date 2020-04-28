@@ -5,6 +5,7 @@ import ResultSlider from "./ResultSlider";
 import HeroProfile from "./HeroProfile";
 import ResultImageGrid from "./ResultImageGrid";
 import Stories from "./Stories";
+import {BrowserRouter} from "react-router-dom";
 
 
 class Results extends Component {
@@ -46,6 +47,7 @@ class Results extends Component {
         // console.log(this.props.Character);
         console.log("Changed!: " + this.state.selectedIssue)
         return (
+            < div class="page-wrap" >
             <div>
 
                 {/*<ul>*/}
@@ -61,6 +63,7 @@ class Results extends Component {
 
 
 
+            </div>
             </div>
 
         )
