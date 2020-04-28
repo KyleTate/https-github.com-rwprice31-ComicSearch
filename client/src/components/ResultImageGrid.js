@@ -40,19 +40,22 @@ export default class imagegrid extends Component {
         // console.log(IMAGES)
         // console.log(this.props)
         return (
-            <div id="Result-Image-Grid" style = {{
-                display: "box",
+            <div className="Result-Grid">
+            <div  style = {{
+                display: "inline-block",
                 minHeight: "1px",
                 width: "100%",
                 border: "1px solid #ddd",
-                overflow :"auto"}}>
+                }}>
                 <Gallery
                     images={IMAGES}
                     enableImageSelection={false}
                     enableLightbox={true}
                     rowHeight={520}
+                    margin={5}
                     onClickThumbnail={this.passIssueId}
                 />
+            </div>
             </div>
         );
     }

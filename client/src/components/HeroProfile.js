@@ -122,10 +122,11 @@ export default class HeroProfile extends Component {
         return (
             <div>
 
-                <img id="Hero-Profile-Picture"  src = {require('./'+this.picture+'.png')} />
-                <img id="Publisher-Profile"  src = {this.logo} />
-                <img id="Comic-Search-Text-Profile"  src = {comicSearch} />
+                <img className="Result_character-Image" id="Hero-Profile-Picture"  src = {require('./'+this.picture+'.png')} />
+                <img className="Publisher-Profile"  src = {this.logo} />
+                <img className="Comic-Search-Text-Profile"  src = {comicSearch} />
                 <h2 className="Result-Character-Name">{this.characterName}</h2>
+
 
                 <ul className="Result-Stories">
 

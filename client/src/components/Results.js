@@ -4,6 +4,7 @@ import CBSText from "./cbstext.png";
 import ResultSlider from "./ResultSlider";
 import HeroProfile from "./HeroProfile";
 import ResultImageGrid from "./ResultImageGrid";
+import Stories from "./Stories";
 
 
 class Results extends Component {
@@ -17,7 +18,7 @@ class Results extends Component {
             selectedIssue: ""
         }
         // console.log(props)
-        // console.log(props.location.state.Character)
+        console.log(props.location.state.Character)
         this.onChange = this.onChange.bind(this);
     }
     //
@@ -46,14 +47,16 @@ class Results extends Component {
         console.log("Changed!: " + this.state.selectedIssue)
         return (
             <div>
+
                 {/*<ul>*/}
                 {/*    {this.state.list.map(s => (<li>{s.id}</li>))}*/}
                 {/*</ul>*/}
            <h1 className="App-body">Select a Series</h1>
                 <ResultSlider List={this.state.list} Character={this.state.Character}/>
                 <HeroProfile Character={this.state.Character} SelectedIssue={this.state.selectedIssue}/>
-                <ResultImageGrid List={this.state.list} Character={this.state.Character} changeIssue={this.onChange}/>
-                <h1>{this.state.Character}</h1>
+               <span className="Result-Grid-Outside" ><ResultImageGrid List={this.state.list} Character={this.state.Character} changeIssue={this.onChange} /></span>
+                {/*<h1>{this.state.Character}</h1>*/}
+                {/*<Stories List={this.state.list} Character={this.state.Character} changeIssue={this.onChange}/>*/}
 
 
 
