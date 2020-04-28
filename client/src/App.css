@@ -1,3 +1,8 @@
+.page-wrap {
+  width: 100%;
+  margin: 0 auto;
+}
+
 .App-header {
 
   min-height: 20vh;
@@ -16,6 +21,7 @@
   position: relative;
   right: -210px;
   top: 10px;
+  overflow-x: hidden;
 
 }
 
@@ -189,7 +195,7 @@
   overflow-x: hidden;
   padding-right: 0px;
 
-  margin-top: 15px;
+  /*margin-top: 15px;*/
 }
 
 .Result-Grid-Outside{
@@ -241,10 +247,10 @@
 
 .Result-Stories{
   border-style: groove;
-  border-width: 20px;
+border-width: 20px;
 
   position: absolute;
-  top: 350px;
+  top: 335px;
   right: 45px;
   height:340px;
   width: 515px;
@@ -296,6 +302,7 @@
   overflow-x: auto;
   overflow-y: visible;
   text-align: left;
+  transition:0s 180s;
 }
 /*.Header-Popup{*/
 /*  position: absolute;*/
