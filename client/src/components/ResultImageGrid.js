@@ -39,7 +39,7 @@ export default class imagegrid extends Component {
                 thumbnailWidth: 174,
                 thumbnailHeight: 320,
                 tags: [{value: "", title: "", issue_id: s.id}],
-                caption: "",
+                caption: s.name + " #" + s.number,
                 scaletwidth: 282,
                 marginLeft: 0,
                 width: 100,
@@ -60,11 +60,11 @@ export default class imagegrid extends Component {
                 }}>
                 <Gallery
                     images={IMAGES}
-                    enableImageSelection={false}
-                    enableLightbox={true}
+                    enableImageSelection={true}
                     rowHeight={700}
                     margin={20}
                     onClickThumbnail={this.passIssueId}
+                    backdropClosesModal={true}
                 />
             </div>
             </div>
