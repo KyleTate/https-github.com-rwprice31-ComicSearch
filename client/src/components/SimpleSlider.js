@@ -84,7 +84,7 @@ class SimpleSlider extends Component {
             return (
                 <div>
 
-                    <h2 id="Quick-Fix">Characters</h2>
+                    <h2 className="Quick-Fix">Characters</h2>
                     <Slider className="Slider" {...settings}>
 
                         <div>
@@ -157,6 +157,9 @@ class SimpleSlider extends Component {
                                 className="Hero-Images" src={silverSurfer}/> </Link>
                         </div>
                     </Slider>
+                    <h3 className="Quick-Fix">Characters</h3>
+                    <h3 className="Quick-Fix">Characters</h3>
+
                 </div>
             );
         }
@@ -164,8 +167,7 @@ class SimpleSlider extends Component {
         else if (this.props.location.state.Publisher == "DC"){
             return (
                 <div>
-
-                    <h2 id="Quick-Fix">Characters</h2>
+                    <h2 className="Quick-Fix">Characters</h2>
                     <Slider className="Slider" {...settings}>
 
                         <div>
@@ -239,7 +241,11 @@ class SimpleSlider extends Component {
                                 src={theFlash}/> </Link>
                         </div>
                     </Slider>
+                    <h3 className="Quick-Fix">Characters</h3>
+                    <h3 className="Quick-Fix">Characters</h3>
+
                 </div>
+
             );
         }
     }

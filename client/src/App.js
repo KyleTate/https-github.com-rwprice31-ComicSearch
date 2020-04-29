@@ -42,8 +42,9 @@ class App extends Component {
 
     render() {
         return (
-            <BrowserRouter>
 
+            <BrowserRouter>
+                <div className="No-Scroll">
             <div className="App">
 
                 <Route exact path="/" component={Publishers} />
@@ -71,7 +72,7 @@ class App extends Component {
                    {/* <Publishers publisher={this.state.publishers}/> */}
                 {/* </div> */}
             </div>
-
+            </div>
             </BrowserRouter>
         );
     }
