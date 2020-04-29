@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import Gallery from 'react-grid-gallery';
 import HeroProfile from "./HeroProfile";
+import styled from "styled-components";
 
 var IMAGES = []
 
@@ -21,6 +22,12 @@ export default class imagegrid extends Component {
 
     render() {
 
+        const imageGrid = styled.div`
+  grid-column: 1 / 3;
+  grid-rows: 1;
+  background: #002b36;
+`;
+
         IMAGES = []
         this.props.List.map(s => {
             this.issue_cover_id = s.id;
@@ -35,7 +42,7 @@ export default class imagegrid extends Component {
                 caption: "",
                 scaletwidth: 282,
                 marginLeft: 0,
-                vwidth: 282,
+                width: 100,
             }
         )
     })
@@ -43,6 +50,7 @@ export default class imagegrid extends Component {
         // console.log(IMAGES)
         // console.log(this.props)
         return (
+            <imageGrid>
             <div className="Result-Grid">
             <div  style = {{
                 display: "inline-block",
@@ -54,12 +62,13 @@ export default class imagegrid extends Component {
                     images={IMAGES}
                     enableImageSelection={false}
                     enableLightbox={true}
-                    rowHeight={520}
-                    margin={5}
+                    rowHeight={700}
+                    margin={20}
                     onClickThumbnail={this.passIssueId}
                 />
             </div>
             </div>
+            </imageGrid>
         );
     }
 }

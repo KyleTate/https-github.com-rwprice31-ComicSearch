@@ -11,6 +11,7 @@ import marvelLogo from './Marvelcomics.png';
 import comicSearch from './cbstext.png';
 import GetInput from './GetInput.js';
 import SimpleSlider from "./SimpleSlider";
+import styled from "styled-components";
 
 
 
@@ -119,10 +120,13 @@ export default class HeroProfile extends Component {
         }
 
 
+
+
         return (
             <div>
-
+                <heroProfile>
                 <img className="Result_character-Image" id="Hero-Profile-Picture"  src = {require('./'+this.picture+'.png')} />
+                </heroProfile>
                 <img className="Publisher-Profile"  src = {this.logo} />
                 <img className="Comic-Search-Text-Profile"  src = {comicSearch} />
                 <h2 className="Result-Character-Name">{this.characterName}</h2>

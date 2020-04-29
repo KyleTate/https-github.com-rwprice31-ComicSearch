@@ -95,6 +95,7 @@ series;
             slidesToShow: 5,
             slidesToScroll: 4,
             initialSlide: 0,
+
             responsive: [
                 {
                     breakpoint: 1024,
@@ -125,7 +126,7 @@ series;
 
         return (
             <div>
-                <h2 id="Quick-Fix">Series Covers</h2>
+                {/*<h2 id="Quick-Fix">Series Covers</h2>*/}
                 <Slider className="Result-Slider" {...settings}>
                     {this.props.List.map(s => {
                         this.issue_cover_id = s.id;
