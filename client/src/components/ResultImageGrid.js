@@ -34,8 +34,8 @@ export default class imagegrid extends Component {
             IMAGES.push({
                 src: this.image,
                 thumbnail: this.image,
-                thumbnailWidth: 174,
-                thumbnailHeight: 320,
+                thumbnailWidth: 400,
+                thumbnailHeight: 640,
                 tags: [{value: "", title: "", issue_id: s.id}],
                 caption: s.name + " #" + s.number,
                 customOverlay: <div style={overlayStyle}>{s.name + " #" + s.number}</div>,
@@ -60,7 +60,7 @@ export default class imagegrid extends Component {
                 <Gallery
                     images={IMAGES}
                     enableImageSelection={false}
-                    rowHeight={700}
+                    rowHeight={640}
                     margin={20}
                     onClickThumbnail={this.passIssueId}
                     backdropClosesModal={true}
@@ -80,5 +80,5 @@ const overlayStyle = {
     width: "100%",
     color: "white",
     padding: "2px",
-    fontSize: "150%"
+    fontSize: "275%"
 };
