@@ -8,6 +8,7 @@ import ser5 from './series5.jpg';
 import {Link} from "react-router-dom";
 
 // let myMap = new Map();
+const series = [];
 
 export default class ResultSlider extends Component {
 
@@ -16,7 +17,8 @@ export default class ResultSlider extends Component {
     charName;
     image;
     issue_cover_id;
-    series;
+
+
     // renderedOnce = true;
 
 
@@ -26,6 +28,7 @@ export default class ResultSlider extends Component {
             list: this.props.List,
             Character: this.props.Character,
             renderedOnce: false,
+            imageUsed: "",
             items: [
                 {
                     id: 0,
@@ -55,7 +58,7 @@ export default class ResultSlider extends Component {
 
             ]
         }
-        this.renderSeries = this.renderSeries.bind(this);
+        // this.renderSeries = this.renderSeries.bind(this);
     }
 
     // componentDidMount() {
@@ -65,7 +68,7 @@ export default class ResultSlider extends Component {
     shouldComponentUpdate(nextProps, nextState) {
         console.log(nextProps)
         console.log(this.props)
-        if (this.props === nextProps) {
+        if (this.props.List === nextProps.List) {
             return false;
         } else {
             return true;
@@ -86,43 +89,101 @@ export default class ResultSlider extends Component {
     //
     // }
 
-    renderSeries() {
-        for (let [k, v] of this.myMap) {
-            this.temp = v
-            console.log(k, v);
-            console.log(Math.floor(Math.random() * (this.temp.length)));
+    // renderSeries() {
+    //     this.myMap.forEach(function (value, key) {
+    //         // this.temp = value;
+    //         let temp = value;
+    //         console.log(temp)
+    //         console.log(key, value);
+    //         console.log(Math.floor(Math.random() * (temp.length)));
+    //
+    //         // this.issue_cover_id = temp[Math.floor(Math.random() * (temp.length))]
+    //         // this.image = require('./issue_covers/' + this.issue_cover_id + '.jpg');
+    //         let image = require('./issue_covers/' + temp[Math.floor(Math.random() * (temp.length))] + '.jpg');
+    //         this.series.push(
+    //             <div>
+    //                 <button>
+    //                     <img className="Hero-Images" src={image}/>
+    //                 </button>
+    //             </div>
+    //         )
+    //     })
+    // }
 
-            this.issue_cover_id = this.temp[Math.floor(Math.random() * (this.temp.length))]
-            this.image = require('./issue_covers/' + this.issue_cover_id + '.jpg');
-            return (
-                <div>
-                    <button>
-                        <img className="Hero-Images" src={this.image}/>
-                    </button>
-                </div>
-            )
-        }
-    }
+
+    // renderSeries() {
+    //     this.myMap.forEach(function (value, key) {
+    //         // this.temp = value;
+    //         let temp = value;
+    //         console.log(temp)
+    //         console.log(key, value);
+    //         console.log(Math.floor(Math.random() * (temp.length)));
+    //
+    //         // this.issue_cover_id = temp[Math.floor(Math.random() * (temp.length))]
+    //         // this.image = require('./issue_covers/' + this.issue_cover_id + '.jpg');
+    //         let image = require('./issue_covers/' + temp[Math.floor(Math.random() * (temp.length))] + '.jpg');
+    //         series.push(
+    //             <div>
+    //                 <button>
+    //                     <img className="Hero-Images" src={image}/>
+    //                 </button>
+    //             </div>
+    //         )
+    //     })
+    // }
+
 
     render() {
 
         {
-                this.props.List.map(s => {
-                    // console.log(s.series_id + " " + s.id + " " + this.myMap.has(s.series_id))
-                    if (this.myMap.has(s.series_id) == false) {
-                        this.temp.push(s.id)
-                        this.myMap.set(s.series_id, this.temp);
-                        this.temp = []
-                    } else {
-                        {
-                            this.myMap.get(s.series_id).map(s => this.temp.push(s))
-                        }
-                        this.temp.push(s.id)
-                        this.myMap.set(s.series_id, this.temp)
-                        this.temp = []
+            this.props.List.map(s => {
+                // console.log(s.series_id + " " + s.id + " " + this.myMap.has(s.series_id))
+                if (this.myMap.has(s.series_id) == false) {
+                    this.temp.push(s.id)
+                    this.myMap.set(s.series_id, this.temp);
+                    this.temp = []
+                } else {
+                    {
+                        this.myMap.get(s.series_id).map(s => this.temp.push(s))
                     }
-                })
+                    this.temp.push(s.id)
+                    this.myMap.set(s.series_id, this.temp)
+                    this.temp = []
+                }
+            })
         }
+
+        {
+            this.myMap.forEach(function (value, key) {
+                // this.temp = value;
+                let temp = value;
+                console.log(temp)
+                console.log(key, value);
+                console.log(Math.floor(Math.random() * (temp.length)));
+
+                // this.issue_cover_id = temp[Math.floor(Math.random() * (temp.length))]
+                // this.image = require('./issue_covers/' + this.issue_cover_id + '.jpg');
+                let image = require('./issue_covers/' + temp[Math.floor(Math.random() * (temp.length))] + '.jpg');
+                // series.push(
+                //     <div>
+                //         <button>
+                //             <img className="Hero-Images" src={image}/>
+                //         </button>
+                //     </div>
+                // )
+                series.push(image)
+            })
+        }
+
+        {
+            console.log(series)
+        }
+
+        // this.myMap.forEach(function(value, key) {
+        //     console.log(value)
+        // })
+        // .map(s => console.log(s))
+
 
         // for (let [k, v] of this.myMap) {
         //     this.temp = v
@@ -215,7 +276,42 @@ export default class ResultSlider extends Component {
             <div>
                 {/*<h2 id="Quick-Fix">Series Covers</h2>*/}
                 <Slider className="Result-Slider" {...settings}>
-                    {this.renderSeries()}
+                    {/*{this.renderSeries}*/}
+                    {series.map(s => {
+                        return (
+                            <div key={s.id}>
+                                <button>
+                                    <img className="Hero-Images" src={s}/>
+                                </button>
+                            </div>
+                        )
+                    })}
+
+
+                    {/*{*/}
+                    {/*    this.myMap.forEach(function(value, key) {*/}
+                    {/*        // this.temp = value;*/}
+                    {/*        let temp = value;*/}
+                    {/*        // var issueCover;*/}
+                    {/*        let seriesImage;*/}
+                    {/*        console.log(temp)*/}
+                    {/*        console.log(key, value);*/}
+                    {/*        // issueCover = Math.floor(Math.random() * (temp.length))*/}
+                    {/*        // console.log(Math.floor(Math.random() * (temp.length)));*/}
+
+                    {/*        // issueCover = temp[Math.floor(Math.random() * (temp.length))]*/}
+                    {/*        seriesImage = require('./issue_covers/' + temp[Math.floor(Math.random() * (temp.length))] + '.jpg');*/}
+                    {/*        // this.setState({imageUsed: seriesImage})*/}
+                    {/*        console.log(seriesImage)*/}
+                    {/*        return (*/}
+                    {/*            <div>*/}
+                    {/*                <button>*/}
+                    {/*                    <img className="Hero-Images" src={seriesImage}/>*/}
+                    {/*                </button>*/}
+                    {/*            </div>*/}
+                    {/*        )*/}
+                    {/*    })*/}
+                    {/*}*/}
                     {/*{this.myMap.values().map(s => {*/}
                     {/*    this.issue_cover_id = s[0];*/}
                     {/*    this.image = require('./issue_covers/' + this.issue_cover_id + '.jpg');*/}
