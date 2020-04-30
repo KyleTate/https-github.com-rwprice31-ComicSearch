@@ -3,8 +3,19 @@ import React, {Component} from 'react';
 import Gallery from 'react-grid-gallery';
 import HeroProfile from "./HeroProfile";
 import styled from "styled-components";
+import empty from './Images/transparent2.png';
 
 var IMAGES = []
+
+var emptyImage = {
+        src: empty,
+        thumbnail: empty,
+        thumbnailWidth: 400,
+        thumbnailHeight: 640,
+        scaletwidth: 282,
+        marginLeft: 0,
+        width: 100,
+}
 
 export default class imagegrid extends Component {
     constructor(props) {
@@ -51,6 +62,9 @@ export default class imagegrid extends Component {
             }
         )
     }})
+        IMAGES.push(emptyImage);
+        IMAGES.push(emptyImage);
+        IMAGES.push(emptyImage);
         // console.log(IMAGES.length)
         // console.log(IMAGES)
         // console.log(this.props)
