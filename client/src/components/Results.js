@@ -78,9 +78,11 @@ class Results extends Component {
                 {/*    {this.state.list.map(s => (<li>{s.id}</li>))}*/}
                 {/*</ul>*/}
            <h1 className="App-body">Select a Series</h1>
+
+
+                <span className="Result-Grid-Outside" ><ResultImageGrid List={this.state.list} Character={this.state.Character} changeIssue={this.onChange} /></span>
                 <ResultSlider  List={this.state.list} Character={this.state.Character}/>
                 <HeroProfile Character={this.state.Character} SelectedIssue={this.state.selectedIssue}/>
-               <span className="Result-Grid-Outside" ><ResultImageGrid List={this.state.list} Character={this.state.Character} changeIssue={this.onChange} /></span>
                 {/*<h1>{this.state.Character}</h1>*/}
                 {/*<Stories List={this.state.list} Character={this.state.Character} changeIssue={this.onChange}/>*/}
 
