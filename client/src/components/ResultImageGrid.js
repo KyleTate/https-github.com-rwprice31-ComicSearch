@@ -12,8 +12,6 @@ export default class imagegrid extends Component {
         this.passIssueId = this.passIssueId.bind(this);
     }
 
-
-
     passIssueId(index) {
         var id = IMAGES[index].tags[0].issue_id;
         console.log(id);
@@ -29,7 +27,7 @@ export default class imagegrid extends Component {
 `;
 
         IMAGES = []
-        this.props.List.map(s => {
+        this.props.List.map(s => {  
             this.issue_cover_id = s.id;
             this.image = require('./issue_covers/' + this.issue_cover_id + '.jpg');
 
@@ -40,6 +38,7 @@ export default class imagegrid extends Component {
                 thumbnailHeight: 320,
                 tags: [{value: "", title: "", issue_id: s.id}],
                 caption: s.name + " #" + s.number,
+                customOverlay: <div style={overlayStyle}>{s.name + " #" + s.number}</div>,
                 scaletwidth: 282,
                 marginLeft: 0,
                 width: 100,
@@ -60,7 +59,7 @@ export default class imagegrid extends Component {
                 }}>
                 <Gallery
                     images={IMAGES}
-                    enableImageSelection={true}
+                    enableImageSelection={false}
                     rowHeight={700}
                     margin={20}
                     onClickThumbnail={this.passIssueId}
@@ -72,3 +71,14 @@ export default class imagegrid extends Component {
         );
     }
 }
+const overlayStyle = {
+    backgroundColor: "rgba(0, 0, 0, 0.8)",
+    maxHeight: "240px",
+    overflow: "hidden",
+    position: "absolute",
+    bottom: "0",
+    width: "100%",
+    color: "white",
+    padding: "2px",
+    fontSize: "150%"
+};
