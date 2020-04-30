@@ -65,6 +65,7 @@ export default class imagegrid extends Component {
         IMAGES.push(emptyImage);
         IMAGES.push(emptyImage);
         IMAGES.push(emptyImage);
+        IMAGES.push(emptyImage);
         // console.log(IMAGES.length)
         // console.log(IMAGES)
         // console.log(this.props)
