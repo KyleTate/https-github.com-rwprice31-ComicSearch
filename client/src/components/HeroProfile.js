@@ -46,6 +46,7 @@ export default class HeroProfile extends Component {
         //return false
     }
 
+
     // Retrieves the list of items from the Express app
     getData = () => {
         fetch('/issue_stories/' + this.state.selectedIssue)
@@ -134,6 +135,7 @@ export default class HeroProfile extends Component {
                 <h2 className="Result-Character-Name">{this.characterName}</h2>
 
 
+
                 <ul className="Result-Stories">
 
 
@@ -153,7 +155,11 @@ export default class HeroProfile extends Component {
                         </div>
                     </div>
                     </li>))}
+
                 </ul>
+
+            </div>
+
 
 
                 {/*<ul className="Result-Stories">*/}
@@ -271,6 +277,7 @@ export default class HeroProfile extends Component {
                 {/*        </li>*/}
                 {/*    /!*</div>*!/*/}
                 {/*</ul>*/}
+
 
 
             </div>
