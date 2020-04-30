@@ -9,6 +9,9 @@ var IMAGES = []
 export default class imagegrid extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            seriesId : ""
+        }
         this.passIssueId = this.passIssueId.bind(this);
     }
 
@@ -27,7 +30,10 @@ export default class imagegrid extends Component {
 `;
 
         IMAGES = []
-        this.props.List.map(s => {  
+        this.props.List.map(s => {
+
+            if (this.props.SeriesId == s.series_id) {
+
             this.issue_cover_id = s.id;
             this.image = require('./issue_covers/' + this.issue_cover_id + '.jpg');
 
@@ -44,7 +50,7 @@ export default class imagegrid extends Component {
                 width: 100,
             }
         )
-    })
+    }})
         // console.log(IMAGES.length)
         // console.log(IMAGES)
         // console.log(this.props)

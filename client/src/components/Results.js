@@ -17,11 +17,13 @@ class Results extends Component {
             Publisher: this.props.location.state.Publisher,
             Character: this.props.location.state.Character,
             list: [],
+            seriesId: "",
             selectedIssue: ""
         }
         // console.log(props)
         console.log(props.location.state.Character)
         this.onChange = this.onChange.bind(this);
+        this.changeSeries = this.changeSeries.bind(this);
     }
 
 
@@ -45,9 +47,15 @@ class Results extends Component {
         this.setState({ selectedIssue: newIssueId });
     }
 
+    changeSeries(newSeriesId) {
+        console.log(newSeriesId)
+        this.setState({ seriesId: newSeriesId });
+    }
+
 
 
     render() {
+        console.log(this.state.seriesId)
 
 //         const AppLayout = styled.div`
 //   display: grid;
@@ -79,10 +87,10 @@ class Results extends Component {
                 {/*</ul>*/}
            <h1 className="App-body">Select a Series</h1>
 
-
-                <span className="Result-Grid-Outside" ><ResultImageGrid List={this.state.list} Character={this.state.Character} changeIssue={this.onChange} /></span>
-                <ResultSlider  List={this.state.list} Character={this.state.Character}/>
+                <span className="Result-Grid-Outside" ><ResultImageGrid List={this.state.list} Character={this.state.Character} SeriesId={this.state.seriesId} changeIssue={this.onChange} /></span>
+                <ResultSlider  List={this.state.list} Character={this.state.Character} changeSeries={this.changeSeries}/>
                 <HeroProfile Character={this.state.Character} SelectedIssue={this.state.selectedIssue}/>
+
                 {/*<h1>{this.state.Character}</h1>*/}
                 {/*<Stories List={this.state.list} Character={this.state.Character} changeIssue={this.onChange}/>*/}
 

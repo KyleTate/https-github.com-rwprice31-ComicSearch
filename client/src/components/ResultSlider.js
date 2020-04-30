@@ -9,6 +9,7 @@ import {Link} from "react-router-dom";
 
 // let myMap = new Map();
 var series = [];
+var index;
 
 // if (series.length > 0) {
 //     series = []
@@ -17,6 +18,8 @@ var series = [];
 export default class ResultSlider extends Component {
 
     myMap = new Map();
+    ourMap = new Map();
+    titleMap = new Map();
     temp = [];
     charName;
     image;
@@ -143,9 +146,19 @@ export default class ResultSlider extends Component {
         series = [];
         // console.log(series)
 
+        const imageClick = (s) => {
+            console.log('Click');
+            console.log(this.ourMap.get(s))
+            this.props.changeSeries(this.ourMap.get(s));
+        }
+
         {
             this.props.List.map(s => {
                 // console.log(s.series_id + " " + s.id + " " + this.myMap.has(s.series_id))
+
+                this.ourMap.set(s.id, s.series_id);
+                this.titleMap.set(s.id, s.name)
+
                 if (this.myMap.has(s.series_id) == false) {
                     this.temp.push(s.id)
                     this.myMap.set(s.series_id, this.temp);
@@ -164,14 +177,22 @@ export default class ResultSlider extends Component {
         {
             this.myMap.forEach(function (value, key) {
                 // this.temp = value;
+
+
                 let temp = value;
                 console.log(temp)
                 console.log(key, value);
+                index = Math.floor(Math.random() * (temp.length));
                 console.log(Math.floor(Math.random() * (temp.length)));
 
                 // this.issue_cover_id = temp[Math.floor(Math.random() * (temp.length))]
                 // this.image = require('./issue_covers/' + this.issue_cover_id + '.jpg');
-                let image = require('./issue_covers/' + temp[Math.floor(Math.random() * (temp.length))] + '.jpg');
+                // let image = require('./issue_covers/' + temp[Math.floor(Math.random() * (temp.length))] + '.jpg');
+
+
+                // let image = require('./issue_covers/' + temp[index] + '.jpg');
+
+
                 // series.push(
                 //     <div>
                 //         <button>
@@ -179,7 +200,9 @@ export default class ResultSlider extends Component {
                 //         </button>
                 //     </div>
                 // )
-                series.push(image)
+
+
+                series.push(temp[index])
             })
         }
 
@@ -218,6 +241,7 @@ export default class ResultSlider extends Component {
         // this.myMap.set("dog", 3)
 
         console.log(this.myMap);
+        console.log(this.ourMap);
 
         // {
         //     this.props.List.map(s => {
@@ -251,6 +275,7 @@ export default class ResultSlider extends Component {
             slidesToShow: 5,
             slidesToScroll: 4,
             initialSlide: 0,
+            focusOnSelect: true,
 
             responsive: [
                 {
@@ -286,15 +311,11 @@ export default class ResultSlider extends Component {
                 <Slider className="Result-Slider" {...settings}>
                     {/*{this.renderSeries}*/}
                     {series.map(s => {
+                        let image = require('./issue_covers/' + s + '.jpg');
                         return (
-                            <div key={s.id}>
-
-                                <button>
-                                    <img className="Hero-Images" src={s}/>
-                                </button>
+                            <div key={s}>
+                                    <img className="Hero-Images" src={image} title={this.titleMap.get(s)} onClick={() => imageClick(s)}/>
                             </div>
-
-
                         )
                     })}
 
