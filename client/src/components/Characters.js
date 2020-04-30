@@ -5,6 +5,8 @@ import MarvelLogo from './Marvelcomics.png';
 import DCLogo from './DCLogo.png';
 import CBSText from './cbstext.png';
 
+import {Link} from "react-router-dom";
+
 class nonLandingPages extends Component {
 
     // renderPage() {
@@ -65,12 +67,10 @@ class nonLandingPages extends Component {
         return (
 
             <div>
-                <input id="Search-Bar" type="text" placeholder="Search by hero.." />
-                <button id="Search-Submit" type="submit">Submit</button>
 
             <img style={Logo} src = {this.whichPublisher} alt={"Comic Logo"}/>
 
-            <img style={CBSStyle} src = {CBSText} alt={"comic book search"}/>
+            <Link to={{ pathname: "/"}}> <img style={CBSStyle} src = {CBSText} alt={"comic book search"}/> </Link>
 
             </div>
 

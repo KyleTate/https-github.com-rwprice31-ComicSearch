@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
+import {Link} from "react-router-dom";
 
 import hulk from './Images/hulk.png';
 import thor from './Images/thor.png';
@@ -12,8 +13,6 @@ import comicSearch from './cbstext.png';
 import GetInput from './GetInput.js';
 import SimpleSlider from "./SimpleSlider";
 import styled from "styled-components";
-
-
 
 export default class HeroProfile extends Component {
 
@@ -63,6 +62,7 @@ export default class HeroProfile extends Component {
         //     .then(res => res.json())
         //     .then(list => this.setState({list}))
     }
+
 
     render() {
         // function f(props) {
@@ -126,8 +126,11 @@ export default class HeroProfile extends Component {
             <div>
 
                 <img className="Result_character-Image" id="Hero-Profile-Picture"  src = {require('./Images/'+this.picture+'.png')} />
-                <img className="Publisher-Profile"  src = {this.logo} />
-                <img className="Comic-Search-Text-Profile"  src = {comicSearch} />
+                <Link to={{ pathname: "/"}}><img className="Comic-Search-Text-Profile"  src = {comicSearch} /></Link>
+                {/* if (this.logo = dcLogo) {
+                    <Link to={{ pathname: "/DC"}}><img className="Publisher-Profile"  src = {this.logo} /></Link>
+                }else <Link to={{ pathname: "/Marvel"}}><img className="Publisher-Profile"  src = {this.logo} /></Link> */}
+                <img className="Publisher-Profile" src = {this.logo} />
                 <h2 className="Result-Character-Name">{this.characterName}</h2>
 
 

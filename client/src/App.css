@@ -248,7 +248,7 @@ position: relative;
   top: -80vh;
   right: 59%;
   transform: scale(0.35);
-  border: 15px groove;
+  border: 15px groove white;
   padding-bottom: 110%;
 
 }
