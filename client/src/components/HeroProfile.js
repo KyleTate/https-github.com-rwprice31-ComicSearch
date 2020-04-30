@@ -14,22 +14,23 @@ import GetInput from './GetInput.js';
 import SimpleSlider from "./SimpleSlider";
 import styled from "styled-components";
 
+function goBack(){
+    window.history.back();
+}
+
 export default class HeroProfile extends Component {
 
     characterName = this.props.Character;
     picture = "";
     logo;
 
-
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
             selectedIssue: this.props.SelectedIssue,
             list: []
         }
     }
-
-
 
         componentDidUpdate() {
         // this.setState({selectedIssue: this.props.SelectedIssue})
@@ -45,7 +46,6 @@ export default class HeroProfile extends Component {
         return nextProps.SelectedIssue != this.state.selectedIssue
         //return false
     }
-
 
     // Retrieves the list of items from the Express app
     getData = () => {
@@ -120,9 +120,6 @@ export default class HeroProfile extends Component {
                 break
         }
 
-
-
-
         return (
             <div>
 
@@ -131,9 +128,8 @@ export default class HeroProfile extends Component {
                 {/* if (this.logo = dcLogo) {
                     <Link to={{ pathname: "/DC"}}><img className="Publisher-Profile"  src = {this.logo} /></Link>
                 }else <Link to={{ pathname: "/Marvel"}}><img className="Publisher-Profile"  src = {this.logo} /></Link> */}
-                <img className="Publisher-Profile" src = {this.logo} />
+                <img className="Publisher-Profile" onClick={goBack} src = {this.logo} />
                 <h2 className="Result-Character-Name">{this.characterName}</h2>
-
 
 
                 <ul className="Result-Stories">
@@ -155,7 +151,6 @@ export default class HeroProfile extends Component {
                         </div>
                     </div>
                     </li>))}
-
                 </ul>
 
             </div>
