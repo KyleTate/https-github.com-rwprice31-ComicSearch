@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import Slider from "react-slick";
 import ser1 from './series1.jpg';
 import ser2 from './series2.jpg';
@@ -7,15 +7,35 @@ import ser4 from './series4.jpg';
 import ser5 from './series5.jpg';
 import {Link} from "react-router-dom";
 
+// let myMap = new Map();
+var series = [];
+var index;
+
+// if (series.length > 0) {
+//     series = []
+// }
+
 export default class ResultSlider extends Component {
 
+    myMap = new Map();
+    ourMap = new Map();
+    titleMap = new Map();
+    temp = [];
+    charName;
+    image;
+    issue_cover_id;
 
-charName;
+
+    // renderedOnce = true;
 
 
     constructor(props) {
         super(props);
         this.state = {
+            list: this.props.List,
+            Character: this.props.Character,
+            renderedOnce: false,
+            imageUsed: "",
             items: [
                 {
                     id: 0,
@@ -45,6 +65,22 @@ charName;
 
             ]
         }
+        // this.renderSeries = this.renderSeries.bind(this);
+    }
+
+    // componentDidMount() {
+    //     this.setState({renderedOnce: true})
+    // }
+    //
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log(nextProps)
+        console.log(this.props)
+
+        if (this.props.List === nextProps.List) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     // Method for grabbing id and hero name when hero image btn is selected, having an issue with selcted property being undefined
@@ -61,10 +97,177 @@ charName;
     //
     // }
 
+    // renderSeries() {
+    //     this.myMap.forEach(function (value, key) {
+    //         // this.temp = value;
+    //         let temp = value;
+    //         console.log(temp)
+    //         console.log(key, value);
+    //         console.log(Math.floor(Math.random() * (temp.length)));
+    //
+    //         // this.issue_cover_id = temp[Math.floor(Math.random() * (temp.length))]
+    //         // this.image = require('./issue_covers/' + this.issue_cover_id + '.jpg');
+    //         let image = require('./issue_covers/' + temp[Math.floor(Math.random() * (temp.length))] + '.jpg');
+    //         this.series.push(
+    //             <div>
+    //                 <button>
+    //                     <img className="Hero-Images" src={image}/>
+    //                 </button>
+    //             </div>
+    //         )
+    //     })
+    // }
 
+
+    // renderSeries() {
+    //     this.myMap.forEach(function (value, key) {
+    //         // this.temp = value;
+    //         let temp = value;
+    //         console.log(temp)
+    //         console.log(key, value);
+    //         console.log(Math.floor(Math.random() * (temp.length)));
+    //
+    //         // this.issue_cover_id = temp[Math.floor(Math.random() * (temp.length))]
+    //         // this.image = require('./issue_covers/' + this.issue_cover_id + '.jpg');
+    //         let image = require('./issue_covers/' + temp[Math.floor(Math.random() * (temp.length))] + '.jpg');
+    //         series.push(
+    //             <div>
+    //                 <button>
+    //                     <img className="Hero-Images" src={image}/>
+    //                 </button>
+    //             </div>
+    //         )
+    //     })
+    // }
 
 
     render() {
+
+        series = [];
+        // console.log(series)
+
+        const imageClick = (s) => {
+            console.log('Click');
+            console.log(this.ourMap.get(s))
+            this.props.changeSeries(this.ourMap.get(s));
+        }
+
+        {
+            this.props.List.map(s => {
+                // console.log(s.series_id + " " + s.id + " " + this.myMap.has(s.series_id))
+
+                this.ourMap.set(s.id, s.series_id);
+                this.titleMap.set(s.id, s.name)
+
+                if (this.myMap.has(s.series_id) == false) {
+                    this.temp.push(s.id)
+                    this.myMap.set(s.series_id, this.temp);
+                    this.temp = []
+                } else {
+                    {
+                        this.myMap.get(s.series_id).map(s => this.temp.push(s))
+                    }
+                    this.temp.push(s.id)
+                    this.myMap.set(s.series_id, this.temp)
+                    this.temp = []
+                }
+            })
+        }
+
+        {
+            this.myMap.forEach(function (value, key) {
+                // this.temp = value;
+
+
+                let temp = value;
+                console.log(temp)
+                console.log(key, value);
+                index = Math.floor(Math.random() * (temp.length));
+                console.log(Math.floor(Math.random() * (temp.length)));
+
+                // this.issue_cover_id = temp[Math.floor(Math.random() * (temp.length))]
+                // this.image = require('./issue_covers/' + this.issue_cover_id + '.jpg');
+                // let image = require('./issue_covers/' + temp[Math.floor(Math.random() * (temp.length))] + '.jpg');
+
+
+                // let image = require('./issue_covers/' + temp[index] + '.jpg');
+
+
+                // series.push(
+                //     <div>
+                //         <button>
+                //             <img className="Hero-Images" src={image}/>
+                //         </button>
+                //     </div>
+                // )
+
+
+                series.push(temp[index])
+            })
+        }
+
+        {
+            console.log(series)
+        }
+
+        // this.myMap.forEach(function(value, key) {
+        //     console.log(value)
+        // })
+        // .map(s => console.log(s))
+
+
+        // for (let [k, v] of this.myMap) {
+        //     this.temp = v
+        //     console.log(k, v);
+        //     console.log(Math.floor(Math.random() * (this.temp.length)));
+        //
+        //     this.issue_cover_id = this.temp[Math.floor(Math.random() * (this.temp.length))]
+        //     this.image = require('./issue_covers/' + this.issue_cover_id + '.jpg');
+        //     return (
+        //         <div>
+        //             <button>
+        //                 <img className="Hero-Images" src={this.image}/>
+        //             </button>
+        //         </div>
+        //     )
+        // }
+
+        // {this.myMap.values().map(s => {
+        //     console.log(s)
+        // })
+        // }
+
+
+        // this.myMap.set("dog", 3)
+
+        console.log(this.myMap);
+        console.log(this.ourMap);
+
+        // {
+        //     this.props.List.map(s => {
+        //         console.log(s)
+        //     })
+        // }
+
+
+        // console.log(this.state.List);
+
+        // const imagesElements = this.state.list.map( e => {
+        //     return (
+        //         <h1> HI </h1>
+        //         // {/*<button onClick={this.handleClick} to="/Results"><img className="Hero-Images"*/}
+        //         // {/*                                                      src={ser1}/>*/}
+        //         // {/*</button>*/}
+        //         // <img src={`${e.id}.jpg`} />
+        //     )
+        // });
+
+        // console.log(this.props.List);
+        // console.log(this.state.list);
+        // var object = JSON.parse(this.props.List);
+        // console.log(object);
+        // console.log(this.state.Character);
+
         const settings = {
             dots: false,
             infinite: false,
@@ -72,6 +275,8 @@ charName;
             slidesToShow: 5,
             slidesToScroll: 4,
             initialSlide: 0,
+            focusOnSelect: true,
+
             responsive: [
                 {
                     breakpoint: 1024,
@@ -99,26 +304,68 @@ charName;
                 }
             ]
         };
+
         return (
             <div>
-                <h2 id="Quick-Fix">Heros </h2>
+                {/*<h2 id="Quick-Fix">Series Covers</h2>*/}
                 <Slider className="Result-Slider" {...settings}>
+                    {/*{this.renderSeries}*/}
+                    {series.map(s => {
+                        let image = require('./issue_covers/' + s + '.jpg');
+                        return (
+                            <div key={s}>
+                                    <img className="Hero-Images" src={image} title={this.titleMap.get(s)} onClick={() => imageClick(s)}/>
+                            </div>
+                        )
+                    })}
 
-                    <div >
-                        <button onClick={this.handleClick} to="/Results"> <img className="Hero-Images"  src = {ser1} /> </button>
-                    </div>
-                    <div>
-                        <button onClick={this.handleInput} to="/Results">  <img className="Hero-Images"  src = {ser2} /> </button>
-                    </div>
-                    <div>
-                        <button onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {ser3} /> </button>
-                    </div>
-                    <div>
-                        <button onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {ser4} /> </button>
-                    </div>
-                    <div>
-                        <button onClick={this.handleClick} to="/Results"> <img className="Hero-Images"  src = {ser5} /> </button>
-                    </div>
+
+                    {/*{*/}
+                    {/*    this.myMap.forEach(function(value, key) {*/}
+                    {/*        // this.temp = value;*/}
+                    {/*        let temp = value;*/}
+                    {/*        // var issueCover;*/}
+                    {/*        let seriesImage;*/}
+                    {/*        console.log(temp)*/}
+                    {/*        console.log(key, value);*/}
+                    {/*        // issueCover = Math.floor(Math.random() * (temp.length))*/}
+                    {/*        // console.log(Math.floor(Math.random() * (temp.length)));*/}
+
+                    {/*        // issueCover = temp[Math.floor(Math.random() * (temp.length))]*/}
+                    {/*        seriesImage = require('./issue_covers/' + temp[Math.floor(Math.random() * (temp.length))] + '.jpg');*/}
+                    {/*        // this.setState({imageUsed: seriesImage})*/}
+                    {/*        console.log(seriesImage)*/}
+                    {/*        return (*/}
+                    {/*            <div>*/}
+                    {/*                <button>*/}
+                    {/*                    <img className="Hero-Images" src={seriesImage}/>*/}
+                    {/*                </button>*/}
+                    {/*            </div>*/}
+                    {/*        )*/}
+                    {/*    })*/}
+                    {/*}*/}
+                    {/*{this.myMap.values().map(s => {*/}
+                    {/*    this.issue_cover_id = s[0];*/}
+                    {/*    this.image = require('./issue_covers/' + this.issue_cover_id + '.jpg');*/}
+                    {/*    return (*/}
+                    {/*        <div key={s.id}>*/}
+                    {/*            <button>*/}
+                    {/*                <img className="Hero-Images" src={this.image}/>*/}
+                    {/*            </button>*/}
+                    {/*        </div>*/}
+                    {/*    )*/}
+                    {/*})}*/}
+                    {/*{this.props.List.map(s => {*/}
+                    {/*    this.issue_cover_id = s.id;*/}
+                    {/*    this.image = require('./issue_covers/' + this.issue_cover_id + '.jpg');*/}
+                    {/*    return (*/}
+                    {/*    <div key={s.id}>*/}
+                    {/*        <button>*/}
+                    {/*    <img className="Hero-Images" src={this.image}/>*/}
+                    {/*        </button>*/}
+                    {/*    </div>*/}
+                    {/*    )*/}
+                    {/*})}*/}
                 </Slider>
             </div>
         );

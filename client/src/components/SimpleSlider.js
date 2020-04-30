@@ -1,143 +1,49 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import Slider from "react-slick";
 import GetInput from "./GetInput";
-import hulk from './hulk.png';
-import deadPool from './deadpool.jpg';
-import punisher from './punisher.jpg';
-import CptnAmr from './CaptianAmerica.png';
-import lukeCage from './lukecage.jpg';
-import silverSurfer from './silversurfer.jpg';
-import ironMan from './IronMan.png';
-import blackPanther from './blackpanther.jpg';
-import spiderMan from './spiderman.png';
-import wolverine from './wolverine.jpg';
+import hulk from './Images/hulk.png';
+import deadPool from './Images/deadpool.png';
+import punisher from './Images/punisher.png';
+import CptnAmr from './Images/CaptianAmerica.png';
+import lukeCage from './Images/lukecage.png';
+import silverSurfer from './Images/silversurfer.png';
+import ironMan from './Images/IronMan.png';
+import blackPanther from './Images/blackpanther.png';
+import spiderMan from './Images/spiderMan.png';
+import wolverine from './Images/wolverine.png';
 import {Link} from "react-router-dom";
-import HeroProfile from "./HeroProfile";
-
-
-// const     data = {
-//     spiderMan: [ 0, 'Spider Man'],
-//     hulk:[ 1,  'hulk'],
-//     ironMan: [ 2, 'Iron Man' ],
-//     wolverine: [ 3, 'Wolverine'],
-//     deadPool: [ 4, 'Deadpool'],
-//     blackPanther: [ 5, 'Black Panther',],
-//     punisher: [ 6, 'Punisher'],
-//     cptnAmerica: [ 7, 'Captain America'],
-//     slvrSurfer: [ 8, 'Silver Surfer'],
-//     lukeCage: [ 9, 'Luke Cage'],
-// }
+import joker from "./Images/joker.png";
+import superMan from "./Images/superman.png";
+import batMan from "./Images/batman.png";
+import wonderWoman from "./Images/wonderwoman.png";
+import greenLantern from "./Images/greenlantern.png";
+import johnC from "./Images/johnconstantine.png";
+import greenArrow from "./Images/greenarrow.png";
+import aquaMan from "./Images/aquaman.png";
+import bane from "./Images/bane.png";
+import theFlash from "./Images/flash.jpg";
 
 class SimpleSlider extends Component {
 
-
-
-
-
-
     constructor(props) {
         super(props);
+        if (this.props.location.state.Publisher == "Marvel"){
         this.state = {
-            items: [
-                {
-                    id: 0,
-                    Title: "Spider Man",
-                    selected: false
+            Publisher: this.props.location.state.Publisher,
+            Character: "",
+        }}
 
-                },
-                {
-                    id: 1,
-                    Title: "Hulk",
-                    selected: false
-                },
-                {
-                    id: 2,
-                    Title: "Iron Man",
-                    selected: false
-                },
-                {
-                    id: 3,
-                    Title: "Wolverine",
-                    selected: false
-                },
-                {
-                    id: 4,
-                    Title: "Deadpool",
-                    selected: false
-                },
-                {
-                    id: 5,
-                    Title: "Black Panther",
-                    selected: false
-                },
-                {
-                    id: 6,
-                    Title: "Punisher",
-                    selected: false
-                },
-                {
-                    id: 7,
-                    Title: "Captain America",
-                    selected: false
-                },
-                {
-                    id: 8,
-                    Title: "Silver Surfer",
-                    selected: false
-                },
-                {
-                    id: 9,
-                    Title: "Luke Cage",
-                    selected: false
-                },
-            ]
-
-        }
-
-    }
-
-
-
-    // Method for grabbing id and hero name when hero image btn is selected, having an issue with selcted property being undefined
-    // makeHero;
-     heroName;
-
-
-
-    handleClick = (id) => {
-        let items = [...this.state.items];
-
-        console.log(this.props)
-        const hero = items[id];
-
-        // items["id"].selected = this.heroName;
-
-
-        items.forEach (item => {
-            if(item.id !== id){
-                item.selected = false;
+        else if (this.props.location.state.Publisher == "DC") {
+            this.state = {
+                Publisher: this.props.location.state.Publisher,
+                Character: "",
             }
-        });
-
-
-        this.setState({
-            items
-        });
-
+        }
     }
-
-    makeHero = (items) => {
-        return items.map(item =>{
-            return <GetInput Item = {item} onClick={(e => this.handleClick(item.id, e))} key={item.id} />
-        })
-    }
-
-
-
 
     render() {
-        // {this.state.handleClick()}
-        // let { handleClick } = this.props;
+        console.log(this.state.Publisher);
+
         const settings = {
             dots: true,
             infinite: true,
@@ -174,53 +80,174 @@ class SimpleSlider extends Component {
         };
 
 
-        return (
-            <div>
+        if (this.props.location.state.Publisher == "Marvel"){
+            return (
+                <div>
 
-                <h2 id="Quick-Fix">Hero </h2>
-                <Slider className="Slider" {...settings}>
+                    <h2 className="Quick-Fix">Characters</h2>
+                    <Slider className="Slider" {...settings}>
 
-                    <div>
+                        <div>
+                            <Link to={{
+                                pathname: "/Results",
+                                state: {Character: 'Spider-Man', Publisher: this.state.Publisher}
+                            }}> <img className="Hero-Images" src={spiderMan}/> </Link>
+                        </div>
+                        <div>
+                            <Link to={{
+                                pathname: "/Results",
+                                state: {Character: 'Hulk', Publisher: this.state.Publisher}
+                            }}><img className="Hero-Images"
+                                    src={hulk}/> </Link>
+                        </div>
+                        <div>
+                            <Link to="/Results" to={{
+                                pathname: "/Results",
+                                state: {Character: 'Captain America', Publisher: this.state.Publisher}
+                            }}><img
+                                className="Hero-Images" src={CptnAmr}/> </Link>
+                        </div>
+                        <div>
+                            <Link to={{
+                                pathname: "/Results",
+                                state: {Character: 'Deadpool', Publisher: this.state.Publisher}
+                            }}> <img className="Hero-Images"
+                                     src={deadPool}/> </Link>
+                        </div>
+                        <div>
+                            <Link to="/Results" to={{
+                                pathname: "/Results",
+                                state: {Character: 'Black Panther', Publisher: this.state.Publisher}
+                            }}> <img
+                                className="Hero-Images" src={blackPanther}/> </Link>
+                        </div>
+                        <div>
+                            <Link to={{
+                                pathname: "/Results",
+                                state: {Character: 'Wolverine', Publisher: this.state.Publisher}
+                            }}> <img className="Hero-Images"
+                                     src={wolverine}/> </Link>
+                        </div>
+                        <div>
+                            <Link to={{
+                                pathname: "/Results",
+                                state: {Character: 'Punisher', Publisher: this.state.Publisher}
+                            }}> <img className="Hero-Images"
+                                     src={punisher}/> </Link>
+                        </div>
+                        <div>
+                            <Link to={{
+                                pathname: "/Results",
+                                state: {Character: 'Iron Man', Publisher: this.state.Publisher}
+                            }}> <img className="Hero-Images"
+                                     src={ironMan}/> </Link>
+                        </div>
+                        <div>
+                            <Link to={{
+                                pathname: "/Results",
+                                state: {Character: 'Luke Cage', Publisher: this.state.Publisher}
+                            }}> <img className="Hero-Images"
+                                     src={lukeCage}/> </Link>
+                        </div>
+                        <div>
+                            <Link to={{
+                                pathname: "/Results",
+                                state: {Character: 'Silver Surfer', Publisher: this.state.Publisher}
+                            }}> <img
+                                className="Hero-Images" src={silverSurfer}/> </Link>
+                        </div>
+                    </Slider>
+                    <h3 className="Quick-Fix">Characters</h3>
+                    <h3 className="Quick-Fix">Characters</h3>
 
+                </div>
+            );
+        }
 
-                        <Link onClick={this.handleClick} to="/Results"> <img className="Hero-Images"  src = {spiderMan} /> </Link>
-                    </div>
-                    <div>
-                        <Link  onClick={this.handleClick} to="/Results" value="hulk"> <img className="Hero-Images"  src = {hulk} /> </Link>
-                    </div>
-                    <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {CptnAmr} /> </Link>
-                    </div>
-                    <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {deadPool} /> </Link>
-                    </div>
-                    <div >
-                        <Link onClick={this.handleClick} to="/Results"> <img className="Hero-Images"  src = {blackPanther} /> </Link>
-                    </div>
-                    <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {wolverine} /> </Link>
-                    </div>
-                    <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {punisher} /> </Link>
-                    </div>
-                    <div>
+        else if (this.props.location.state.Publisher == "DC"){
+            return (
+                <div>
+                    <h2 className="Quick-Fix">Characters</h2>
+                    <Slider className="Slider" {...settings}>
 
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {ironMan} /> </Link>
-                    </div>
-                    <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {lukeCage} /> </Link>
-                    </div>
-                    <div>
-                        <Link onClick={this.handleClick} to="/Results">  <img className="Hero-Images"  src = {silverSurfer} /> </Link>
-                    </div>
+                        <div>
+                            <Link to={{
+                                pathname: "/Results",
+                                state: {Character: 'Joker', Publisher: this.state.Publisher}
+                            }}> <img className="Hero-Images" src={joker}/> </Link>
+                        </div>
+                        <div>
+                            <Link to={{
+                                pathname: "/Results",
+                                state: {Character: 'Superman', Publisher: this.state.Publisher}
+                            }}><img className="Hero-Images"
+                                    src={superMan}/> </Link>
+                        </div>
+                        <div>
+                            <Link to="/Results" to={{
+                                pathname: "/Results",
+                                state: {Character: 'Batman', Publisher: this.state.Publisher}
+                            }}><img
+                                className="Hero-Images" src={batMan}/> </Link>
+                        </div>
+                        <div>
+                            <Link to={{
+                                pathname: "/Results",
+                                state: {Character: 'Wonder Woman', Publisher: this.state.Publisher}
+                            }}> <img className="Hero-Images"
+                                     src={wonderWoman}/> </Link>
+                        </div>
+                        <div>
+                            <Link to="/Results" to={{
+                                pathname: "/Results",
+                                state: {Character: 'Green Lantern', Publisher: this.state.Publisher}
+                            }}> <img
+                                className="Hero-Images" src={greenLantern}/> </Link>
+                        </div>
+                        <div>
+                            <Link to={{
+                                pathname: "/Results",
+                                state: {Character: 'John Constantine', Publisher: this.state.Publisher}
+                            }}> <img className="Hero-Images"
+                                     src={johnC}/> </Link>
+                        </div>
+                        <div>
+                            <Link to={{
+                                pathname: "/Results",
+                                state: {Character: 'Green Arrow', Publisher: this.state.Publisher}
+                            }}> <img className="Hero-Images"
+                                     src={greenArrow}/> </Link>
+                        </div>
+                        <div>
+                            <Link to={{
+                                pathname: "/Results",
+                                state: {Character: 'Aquaman', Publisher: this.state.Publisher}
+                            }}> <img className="Hero-Images"
+                                     src={aquaMan}/> </Link>
+                        </div>
+                        <div>
+                            <Link to={{
+                                pathname: "/Results",
+                                state: {Character: 'Bane', Publisher: this.state.Publisher}
+                            }}> <img className="Hero-Images"
+                                     src={bane}/> </Link>
+                        </div>
+                        <div>
+                            <Link to={{
+                                pathname: "/Results",
+                                state: {Character: 'The Flash', Publisher: this.state.Publisher}
+                            }}> <img
+                                className="Hero-Images"
+                                src={theFlash}/> </Link>
+                        </div>
+                    </Slider>
+                    <h3 className="Quick-Fix">Characters</h3>
+                    <h3 className="Quick-Fix">Characters</h3>
 
-                </Slider>
+                </div>
 
-                {/*{this.makeHero(this.state.items)}*/}
-
-
-            </div>
-        );
+            );
+        }
     }
 }
 
