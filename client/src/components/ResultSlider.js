@@ -288,10 +288,13 @@ export default class ResultSlider extends Component {
                     {series.map(s => {
                         return (
                             <div key={s.id}>
+
                                 <button>
                                     <img className="Hero-Images" src={s}/>
                                 </button>
                             </div>
+
+
                         )
                     })}
 
