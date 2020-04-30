@@ -8,7 +8,11 @@ import ser5 from './series5.jpg';
 import {Link} from "react-router-dom";
 
 // let myMap = new Map();
-const series = [];
+var series = [];
+
+// if (series.length > 0) {
+//     series = []
+// }
 
 export default class ResultSlider extends Component {
 
@@ -68,6 +72,7 @@ export default class ResultSlider extends Component {
     shouldComponentUpdate(nextProps, nextState) {
         console.log(nextProps)
         console.log(this.props)
+
         if (this.props.List === nextProps.List) {
             return false;
         } else {
@@ -134,6 +139,9 @@ export default class ResultSlider extends Component {
 
 
     render() {
+
+        series = [];
+        // console.log(series)
 
         {
             this.props.List.map(s => {
