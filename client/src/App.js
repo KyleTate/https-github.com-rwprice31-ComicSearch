@@ -12,9 +12,9 @@ import DCLogo from "./components/DCLogo.png";
 import HeroProfile from "./components/HeroProfile";
 import ResultImageGrid from "./components/ResultImageGrid";
 
-import Image1 from "./components/hulk.png";
-import Image2 from "./components/thor.png";
-import Image3 from "./components/CaptianAmerica.png";
+import Image1 from "./components/Images/hulk.png";
+import Image2 from "./components/Images/thor.png";
+import Image3 from "./components/Images/CaptianAmerica.png";
 
 import Gallery from "./components/imagegrid";
 import DC_charactersSlider from "./components/DC_charactersSlider";

@@ -1,27 +1,27 @@
 import React, {Component} from "react";
 import Slider from "react-slick";
 import GetInput from "./GetInput";
-import hulk from './hulk.png';
-import deadPool from './deadpool.png';
-import punisher from './punisher.png';
-import CptnAmr from './CaptianAmerica.png';
-import lukeCage from './lukecage.png';
-import silverSurfer from './silversurfer.png';
-import ironMan from './IronMan.png';
-import blackPanther from './blackpanther.png';
-import spiderMan from './spiderMan.png';
-import wolverine from './wolverine.png';
+import hulk from './Images/hulk.png';
+import deadPool from './Images/deadpool.png';
+import punisher from './Images/punisher.png';
+import CptnAmr from './Images/CaptianAmerica.png';
+import lukeCage from './Images/lukecage.png';
+import silverSurfer from './Images/silversurfer.png';
+import ironMan from './Images/IronMan.png';
+import blackPanther from './Images/blackpanther.png';
+import spiderMan from './Images/spiderMan.png';
+import wolverine from './Images/wolverine.png';
 import {Link} from "react-router-dom";
-import joker from "./joker.png";
-import superMan from "./superman.png";
-import batMan from "./batman.png";
-import wonderWoman from "./wonderwoman.png";
-import greenLantern from "./greenlantern.png";
-import johnC from "./johnconstantine.png";
-import greenArrow from "./greenarrow.png";
-import aquaMan from "./aquaman.png";
-import bane from "./bane.png";
-import theFlash from "./flash.jpg";
+import joker from "./Images/joker.png";
+import superMan from "./Images/superman.png";
+import batMan from "./Images/batman.png";
+import wonderWoman from "./Images/wonderwoman.png";
+import greenLantern from "./Images/greenlantern.png";
+import johnC from "./Images/johnconstantine.png";
+import greenArrow from "./Images/greenarrow.png";
+import aquaMan from "./Images/aquaman.png";
+import bane from "./Images/bane.png";
+import theFlash from "./Images/flash.jpg";
 
 class SimpleSlider extends Component {
 

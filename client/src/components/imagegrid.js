@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 
 import Gallery from 'react-grid-gallery';
-import blackknight from './blackknight.png';
-import hulk from './hulk.png';
-import thor from './thor.png';
-import CptnAmr from './CaptianAmerica.png';
-import ironMan from './IronMan.png';
-import moonKnight from './moonknight.png';
-import sentry from './sentry.png';
+import blackknight from './Images/blackknight.png';
+import hulk from './Images/hulk.png';
+import thor from './Images/thor.png';
+import CptnAmr from './Images/CaptianAmerica.png';
+import ironMan from './Images/IronMan.png';
+import moonKnight from './Images/moonknight.png';
+import sentry from './Images/sentry.png';
 
 const IMAGES =
 [

@@ -5,7 +5,7 @@ import MarvelLogo from './Marvelcomics.png';
 import CBSText from './cbstext.png';
 import MarvelBackground from './marvelsidebackground.png';
 import {Link} from "react-router-dom";
-import ironMan from "./IronMan.png";
+import ironMan from "./Images/IronMan.png";
 
 
 class Publishers extends Component {

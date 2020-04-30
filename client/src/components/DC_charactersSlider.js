@@ -1,28 +1,28 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 
-import joker from './joker.png';
-import superMan from './superman.png';
-import batMan from './batman.png'
-import wonderWoman from './wonderwoman.png';
-import johnC from './johnconstantine.png';
-import aquaMan from './aquaman.png';
-import greenLantern from './greenlantern.png';
-import bane from './bane.jpg';
-import greenArrow from './greenarrow.png';
-import theFlash from './flash.jpg';
+import joker from './Images/joker.png';
+import superMan from './Images/superman.png';
+import batMan from './Images/batman.png'
+import wonderWoman from './Images/wonderwoman.png';
+import johnC from './Images/johnconstantine.png';
+import aquaMan from './Images/aquaman.png';
+import greenLantern from './Images/greenlantern.png';
+import bane from './Images/bane.jpg';
+import greenArrow from './Images/greenarrow.png';
+import theFlash from './Images/flash.jpg';
 
 import {Link} from "react-router-dom";
-import spiderMan from "./spiderMan.png";
-import hulk from "./hulk.png";
-import CptnAmr from "./CaptianAmerica.png";
-import deadPool from "./deadpool.png";
-import blackPanther from "./blackpanther.png";
-import wolverine from "./wolverine.png";
-import punisher from "./punisher.png";
-import ironMan from "./IronMan.png";
-import lukeCage from "./lukecage.png";
-import silverSurfer from "./silversurfer.png";
+import spiderMan from "./Images/spiderMan.png";
+import hulk from "./Images/hulk.png";
+import CptnAmr from "./Images/CaptianAmerica.png";
+import deadPool from "./Images/deadpool.png";
+import blackPanther from "./Images/blackpanther.png";
+import wolverine from "./Images/wolverine.png";
+import punisher from "./Images/punisher.png";
+import ironMan from "./Images/IronMan.png";
+import lukeCage from "./Images/lukecage.png";
+import silverSurfer from "./Images/silversurfer.png";
 
 export default class SimpleSlider extends Component {
 

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 
-import hulk from './hulk.png';
-import thor from './thor.png';
-import SpiderMan from './spiderMan.png';
-import ironMan from './ironmanprofile.png';
+import hulk from './Images/hulk.png';
+import thor from './Images/thor.png';
+import SpiderMan from './Images/spiderMan.png';
+import ironMan from './Images/ironmanprofile.png';
 import dcLogo from './DCLogo.png'
 import marvelLogo from './Marvelcomics.png';
 
@@ -125,7 +125,7 @@ export default class HeroProfile extends Component {
         return (
             <div>
 
-                <img className="Result_character-Image" id="Hero-Profile-Picture"  src = {require('./'+this.picture+'.png')} />
+                <img className="Result_character-Image" id="Hero-Profile-Picture"  src = {require('./Images/'+this.picture+'.png')} />
                 <img className="Publisher-Profile"  src = {this.logo} />
                 <img className="Comic-Search-Text-Profile"  src = {comicSearch} />
                 <h2 className="Result-Character-Name">{this.characterName}</h2>
@@ -133,8 +133,10 @@ export default class HeroProfile extends Component {
 
                 <ul className="Result-Stories">
 
+
                     {this.state.list.map(s => (<li key={s.id}><div className="dropdown">
-                        <p className="Header-Dropdown">Story # {s.sequence_number}</p>
+                        <p className="Header-Dropdown">Story # {s.sequence_number}  <p className="Header-Dropdown-Text">{ s.title}</p></p>
+
                         <div className="dropdown-content">
                             <li key={s.id}>
                                 <p>{"Story Title: " + s.title}</p>

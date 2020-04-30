@@ -307,14 +307,23 @@ position: relative;
 .Header-Dropdown{
   margin-top: 0px;
   position: relative;
-  display: grid;
-  left: 5vw;
+  display: block;
+  left: 2.5vw;
   background: #616161;
   padding-left: 20px;
-  padding-right: 85px;
+  padding-right: 0px;
   height: 15vh;
   text-align: left;
   border: solid #282c34;
+  width: 170px;
+
+}
+
+.Header-Dropdown-Text{
+  size: 500px;
+  position: relative;
+  left: -15px;
+  margin-bottom: 100px;
 }
 
 .dropdown-content {
